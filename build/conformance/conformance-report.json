@@ -1,0 +1,10 @@
+{
+  "item": "M4.17 freeze conformance",
+  "ranAtUtc": "2026-11-03T14:35:02.908Z",
+  "bundleHead": {
+    "bundleSeq": 633,
+    "worlddataHash": "6f4d60f30945402960527bab5ad8415a0b7495f89b9d2b0cded9a7be594320c9"
+  },
+  "ok": true,
+  "diffs": []
+}

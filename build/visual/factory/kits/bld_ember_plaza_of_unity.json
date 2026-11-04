@@ -1,0 +1,43 @@
+{
+ "schema": "portal.building-kit/v1",
+ "item": "M4.14 building kit card (visual-plan/02 \u00a75 recipe, footprint-specs v1 contract)",
+ "code": "EMBER_PLAZA_OF_UNITY",
+ "slug": "bld_ember_plaza_of_unity",
+ "label": "Plaza of Unity",
+ "designCode": "B1",
+ "provenanceClass": "feed-evidenced",
+ "footprint": {
+  "depthUnits": 10,
+  "modulesDeep": 5,
+  "modulesWide": 5,
+  "widthUnits": 10
+ },
+ "parcel": null,
+ "storeys": null,
+ "door": null,
+ "gateFace": null,
+ "family": "civic",
+ "basePieces": "Village Pack well + fences + cart; Kenney Roads paving",
+ "reads": "Open place: paving over the full cell, well, cart, fences; centrepiece is the CUSTOM Benny the Pug statue on a plinth.",
+ "custom": [
+  {
+   "name": "benny_statue",
+   "kind": "statue",
+   "triCap": 400,
+   "note": "CUSTOM primitives + sphere work, on a plinth (visual-plan/02 \u00a75.1 B1)"
+  }
+ ],
+ "pieces": [
+  "custom:benny_statue (358 tris) @1.35",
+  "custom:well (primitives \u2014 no well exists in the Village Pack as downloaded)",
+  "village:Cart",
+  "Prop_WoodenFence_Single x4 (south edge)"
+ ],
+ "condition": null,
+ "asBuilt": {
+  "glb": "../factory/outputs-buildings/bld_ember_plaza_of_unity.glb",
+  "bytes": 147188,
+  "tris": 3366,
+  "notes": []
+ }
+}

@@ -1,0 +1,41 @@
+{
+ "schema": "portal.building-kit/v1",
+ "item": "M4.14 building kit card (visual-plan/02 \u00a75 recipe, footprint-specs v1 contract)",
+ "code": "PUBLIC_WORKSHOP",
+ "slug": "bld_public_workshop",
+ "label": "Public Workshop",
+ "designCode": "B5",
+ "provenanceClass": "feed-evidenced",
+ "footprint": {
+  "depthUnits": 4,
+  "modulesDeep": 2,
+  "modulesWide": 3,
+  "widthUnits": 6
+ },
+ "parcel": null,
+ "storeys": null,
+ "door": {
+  "anchorDoor": "threshold centre of the west face",
+  "anchorSignHeightUnits": 2.6,
+  "face": "west",
+  "heightUnits": 2.2,
+  "widthUnits": 2
+ },
+ "gateFace": null,
+ "family": "work",
+ "basePieces": "Village Pack blacksmith, front opened",
+ "reads": "Front opened on the west (door) face; workbench station + smithy tool props (Kenney stock substitution as Market Hall); gear blanks on the wall.",
+ "custom": [],
+ "pieces": [
+  "village:Blacksmith@1.2",
+  "workbench",
+  "gear blanks x2"
+ ],
+ "condition": null,
+ "asBuilt": {
+  "glb": "../factory/outputs-buildings/bld_public_workshop.glb",
+  "bytes": 352024,
+  "tris": 7813,
+  "notes": []
+ }
+}

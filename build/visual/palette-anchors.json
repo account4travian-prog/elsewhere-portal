@@ -1,0 +1,1313 @@
+{
+  "schema": "portal.palette-anchors/v0",
+  "method": "Patch-median sampling at named anchor points + median-cut dominant clustering, per visual-plan/03-refinement.md §1.1. Decoder: python3 + Pillow (PIL) raw RGB dump (samples are .webp; Node stdlib has no WebP decoder). All sampling and colour math in Node. Deterministic: fixed patch table, fixed cluster stride, total-order tie-breaking, no timestamps.",
+  "decoder": "python3 + Pillow (PIL 10.2.0), WebP support verified on this VM",
+  "clusterParams": {
+    "clusters": 12,
+    "stride": 3,
+    "pixelsSampledPerImage": "ceil(w*h/stride)"
+  },
+  "samples": [
+    {
+      "id": "sample-1-plaza",
+      "register": "exterior-3d",
+      "file": "media-generation-sample-1-plaza-wide-0-52f7b39c-b4ab-4b56-b5e6-0e80e24b25ec.webp",
+      "sha256": "12daa75ca744442d6692644615d028f981742c7da2996aa700e2e0eef65d25cb",
+      "width": 1920,
+      "height": 1280
+    },
+    {
+      "id": "sample-2-college-cutaway",
+      "register": "interior-3d",
+      "file": "media-generation-sample-2-college-cutaway-0-3ec118ff-5999-4ab4-9db3-678ab2b79efb.webp",
+      "sha256": "862f6a7b31763973a06aebb85235e559f73589958180efd7052a17666817f680",
+      "width": 1920,
+      "height": 1280
+    },
+    {
+      "id": "sample-3-street-alt",
+      "register": "flat-2d",
+      "file": "media-generation-sample-3-street-alt-style-0-ffb35b22-8f48-4c1f-812a-49d1f262d912.webp",
+      "sha256": "7f537b2b40934603c94d52d6a9260de0390f3645a48b35f9f092a3bb3fe0f0c2",
+      "width": 1920,
+      "height": 1280
+    }
+  ],
+  "anchors": [
+    {
+      "id": "sky_upper",
+      "register": "exterior-3d",
+      "sourceSample": "sample-1-plaza",
+      "planConstant": "#A8D4EC",
+      "planConstantName": "sky zenith",
+      "hex": "#EBE6E2",
+      "source": "patch",
+      "patchSize": 41,
+      "patches": [
+        {
+          "centre": [
+            0.45,
+            0.045
+          ],
+          "size": 41,
+          "rect": {
+            "x0": 844,
+            "y0": 38,
+            "x1": 884,
+            "y1": 78
+          },
+          "hex": "#D7E5E4",
+          "sampleCount": 1681
+        },
+        {
+          "centre": [
+            0.07,
+            0.05
+          ],
+          "size": 41,
+          "rect": {
+            "x0": 114,
+            "y0": 44,
+            "x1": 154,
+            "y1": 84
+          },
+          "hex": "#EFE8DF",
+          "sampleCount": 1681
+        }
+      ],
+      "sampleCount": 3362,
+      "deltaE00VsPlanConstant": 18.13
+    },
+    {
+      "id": "grass_sunlit",
+      "register": "exterior-3d",
+      "sourceSample": "sample-1-plaza",
+      "planConstant": "#B7E2A0",
+      "planConstantName": "grass base",
+      "planConstantSecondary": "#CDEBB4",
+      "hex": "#CDEAC0",
+      "source": "patch",
+      "patchSize": 41,
+      "patches": [
+        {
+          "centre": [
+            0.63,
+            0.72
+          ],
+          "size": 41,
+          "rect": {
+            "x0": 1190,
+            "y0": 902,
+            "x1": 1230,
+            "y1": 942
+          },
+          "hex": "#E8CB9C",
+          "sampleCount": 1681
+        },
+        {
+          "centre": [
+            0.945,
+            0.83
+          ],
+          "size": 41,
+          "rect": {
+            "x0": 1794,
+            "y0": 1042,
+            "x1": 1834,
+            "y1": 1082
+          },
+          "hex": "#E3D69E",
+          "sampleCount": 1681
+        }
+      ],
+      "sampleCount": 3362,
+      "sampledHex": "#E5CE9D",
+      "amendment": {
+        "kind": "ruled-amendment",
+        "date": "2026-11-03",
+        "ruling": "DECISIONS.md 2026-11-03 — the project owner approved the full scoped touch-up set for building in the scoped order (\"Build the touch-ups in that order\")",
+        "scope": "plan-to-complete/lane-look-touchup-scope.md §T1a — settle D-T02 to one grass green: the app 2D stage's existing #CDEAC0 (the sampled #E5CE9D reads as sand; the plan secondary #CDEBB4 is superseded with it)",
+        "supersedesSampledHex": "#E5CE9D"
+      },
+      "deltaE00VsPlanConstant": 6.36,
+      "deltaE00VsPlanConstantSecondary": 3.18
+    },
+    {
+      "id": "grass_shade",
+      "register": "exterior-3d",
+      "sourceSample": "sample-1-plaza",
+      "planConstant": "#8FD0A0",
+      "planConstantName": "leaf green",
+      "hex": "#545931",
+      "source": "patch",
+      "patchSize": 41,
+      "patches": [
+        {
+          "centre": [
+            0.055,
+            0.845
+          ],
+          "size": 41,
+          "rect": {
+            "x0": 86,
+            "y0": 1062,
+            "x1": 126,
+            "y1": 1102
+          },
+          "hex": "#81854B",
+          "sampleCount": 1681
+        },
+        {
+          "centre": [
+            0.3,
+            0.855
+          ],
+          "size": 41,
+          "rect": {
+            "x0": 556,
+            "y0": 1074,
+            "x1": 596,
+            "y1": 1114
+          },
+          "hex": "#464E2A",
+          "sampleCount": 1681
+        }
+      ],
+      "sampleCount": 3362,
+      "deltaE00VsPlanConstant": 40.43
+    },
+    {
+      "id": "cobble_lit",
+      "register": "exterior-3d",
+      "sourceSample": "sample-1-plaza",
+      "planConstant": "#E9E2D2",
+      "planConstantName": "plaza cobble",
+      "hex": "#E2CFC1",
+      "source": "patch",
+      "patchSize": 41,
+      "patches": [
+        {
+          "centre": [
+            0.42,
+            0.83
+          ],
+          "size": 41,
+          "rect": {
+            "x0": 786,
+            "y0": 1042,
+            "x1": 826,
+            "y1": 1082
+          },
+          "hex": "#E8D6C8",
+          "sampleCount": 1681
+        },
+        {
+          "centre": [
+            0.415,
+            0.585
+          ],
+          "size": 41,
+          "rect": {
+            "x0": 777,
+            "y0": 729,
+            "x1": 817,
+            "y1": 769
+          },
+          "hex": "#DECABC",
+          "sampleCount": 1681
+        }
+      ],
+      "sampleCount": 3362,
+      "deltaE00VsPlanConstant": 7.18
+    },
+    {
+      "id": "paving_shaded",
+      "register": "exterior-3d",
+      "sourceSample": "sample-1-plaza",
+      "planConstant": "#CFC4AC",
+      "planConstantName": "cobble grout/shadow step",
+      "hex": "#DCC7B4",
+      "source": "patch",
+      "patchSize": 41,
+      "patches": [
+        {
+          "centre": [
+            0.215,
+            0.625
+          ],
+          "size": 41,
+          "rect": {
+            "x0": 393,
+            "y0": 780,
+            "x1": 433,
+            "y1": 820
+          },
+          "hex": "#B29F95",
+          "sampleCount": 1681
+        },
+        {
+          "centre": [
+            0.49,
+            0.955
+          ],
+          "size": 41,
+          "rect": {
+            "x0": 921,
+            "y0": 1202,
+            "x1": 961,
+            "y1": 1242
+          },
+          "hex": "#E2CEBE",
+          "sampleCount": 1681
+        }
+      ],
+      "sampleCount": 3362,
+      "deltaE00VsPlanConstant": 6.02
+    },
+    {
+      "id": "roof_lavender_college",
+      "register": "exterior-3d",
+      "sourceSample": "sample-1-plaza",
+      "planConstant": "#A78FD0",
+      "planConstantName": "College purple (roof/trim)",
+      "hex": "#8679A0",
+      "source": "patch",
+      "patchSize": 41,
+      "patches": [
+        {
+          "centre": [
+            0.43,
+            0.125
+          ],
+          "size": 41,
+          "rect": {
+            "x0": 806,
+            "y0": 140,
+            "x1": 846,
+            "y1": 180
+          },
+          "hex": "#8378A0",
+          "sampleCount": 1681
+        },
+        {
+          "centre": [
+            0.475,
+            0.155
+          ],
+          "size": 41,
+          "rect": {
+            "x0": 892,
+            "y0": 178,
+            "x1": 932,
+            "y1": 218
+          },
+          "hex": "#8D7EA1",
+          "sampleCount": 1681
+        }
+      ],
+      "sampleCount": 3362,
+      "deltaE00VsPlanConstant": 11.12
+    },
+    {
+      "id": "roof_blush_spire",
+      "register": "exterior-3d",
+      "sourceSample": "sample-1-plaza",
+      "planConstant": "#F2B8C6",
+      "planConstantName": "Town Hall pink (roof)",
+      "hex": "#FDE5CF",
+      "source": "patch",
+      "patchSize": 41,
+      "patches": [
+        {
+          "centre": [
+            0.755,
+            0.2
+          ],
+          "size": 41,
+          "rect": {
+            "x0": 1430,
+            "y0": 236,
+            "x1": 1470,
+            "y1": 276
+          },
+          "hex": "#FDE5CF",
+          "sampleCount": 1681
+        }
+      ],
+      "sampleCount": 1681,
+      "deltaE00VsPlanConstant": 20.89
+    },
+    {
+      "id": "timber_structural",
+      "register": "exterior-3d",
+      "sourceSample": "sample-1-plaza",
+      "planConstant": "#8A6742",
+      "planConstantName": "timber dark (doors, beams)",
+      "planConstantSecondary": "#B98A5E",
+      "hex": "#99775B",
+      "source": "patch",
+      "patchSize": 25,
+      "patches": [
+        {
+          "centre": [
+            0.107,
+            0.333
+          ],
+          "size": 25,
+          "rect": {
+            "x0": 193,
+            "y0": 414,
+            "x1": 217,
+            "y1": 438
+          },
+          "hex": "#EDB789",
+          "sampleCount": 625
+        },
+        {
+          "centre": [
+            0.316,
+            0.44
+          ],
+          "size": 25,
+          "rect": {
+            "x0": 595,
+            "y0": 551,
+            "x1": 619,
+            "y1": 575
+          },
+          "hex": "#734A37",
+          "sampleCount": 625
+        }
+      ],
+      "sampleCount": 1250,
+      "deltaE00VsPlanConstant": 7.06,
+      "deltaE00VsPlanConstantSecondary": 9.06
+    },
+    {
+      "id": "trim_pale",
+      "register": "exterior-3d",
+      "sourceSample": "sample-1-plaza",
+      "planConstant": "#FBF3E2",
+      "planConstantName": "cream plaster",
+      "hex": "#CFBE95",
+      "source": "patch",
+      "patchSize": 41,
+      "patches": [
+        {
+          "centre": [
+            0.775,
+            0.415
+          ],
+          "size": 41,
+          "rect": {
+            "x0": 1468,
+            "y0": 511,
+            "x1": 1508,
+            "y1": 551
+          },
+          "hex": "#F8E6CE",
+          "sampleCount": 1681
+        },
+        {
+          "centre": [
+            0.183,
+            0.825
+          ],
+          "size": 41,
+          "rect": {
+            "x0": 331,
+            "y0": 1036,
+            "x1": 371,
+            "y1": 1076
+          },
+          "hex": "#8B5C44",
+          "sampleCount": 1681
+        }
+      ],
+      "sampleCount": 3362,
+      "deltaE00VsPlanConstant": 14.45
+    },
+    {
+      "id": "blossom_pink",
+      "register": "exterior-3d",
+      "sourceSample": "sample-1-plaza",
+      "planConstant": "#F6C9D8",
+      "planConstantName": "blossom pink",
+      "hex": "#E3B5AA",
+      "source": "patch",
+      "patchSize": 41,
+      "patches": [
+        {
+          "centre": [
+            0.885,
+            0.165
+          ],
+          "size": 41,
+          "rect": {
+            "x0": 1679,
+            "y0": 191,
+            "x1": 1719,
+            "y1": 231
+          },
+          "hex": "#C7BDA9",
+          "sampleCount": 1681
+        },
+        {
+          "centre": [
+            0.038,
+            0.235
+          ],
+          "size": 41,
+          "rect": {
+            "x0": 53,
+            "y0": 281,
+            "x1": 93,
+            "y1": 321
+          },
+          "hex": "#E7AFAD",
+          "sampleCount": 1681
+        }
+      ],
+      "sampleCount": 3362,
+      "deltaE00VsPlanConstant": 11.43
+    },
+    {
+      "id": "awning_banner_cream",
+      "register": "exterior-3d",
+      "sourceSample": "sample-1-plaza",
+      "planConstant": "#FFF6EA",
+      "planConstantName": "awning stripe cream",
+      "hex": "#FDCFAC",
+      "source": "patch",
+      "patchSize": 31,
+      "patches": [
+        {
+          "centre": [
+            0.222,
+            0.434
+          ],
+          "size": 31,
+          "rect": {
+            "x0": 411,
+            "y0": 541,
+            "x1": 441,
+            "y1": 571
+          },
+          "hex": "#FDCCBA",
+          "sampleCount": 961
+        },
+        {
+          "centre": [
+            0.682,
+            0.464
+          ],
+          "size": 31,
+          "rect": {
+            "x0": 1294,
+            "y0": 579,
+            "x1": 1324,
+            "y1": 609
+          },
+          "hex": "#FDDFA5",
+          "sampleCount": 961
+        }
+      ],
+      "sampleCount": 1922,
+      "deltaE00VsPlanConstant": 14.48
+    },
+    {
+      "id": "skin_base",
+      "register": "exterior-3d",
+      "sourceSample": "sample-1-plaza",
+      "planConstant": null,
+      "planConstantName": null,
+      "hex": "#B4A9A8",
+      "source": "patch",
+      "patchSize": 15,
+      "patches": [
+        {
+          "centre": [
+            0.351,
+            0.573
+          ],
+          "size": 15,
+          "rect": {
+            "x0": 667,
+            "y0": 726,
+            "x1": 681,
+            "y1": 740
+          },
+          "hex": "#ACA3A4",
+          "sampleCount": 225
+        },
+        {
+          "centre": [
+            0.417,
+            0.578
+          ],
+          "size": 15,
+          "rect": {
+            "x0": 794,
+            "y0": 733,
+            "x1": 808,
+            "y1": 747
+          },
+          "hex": "#D3C0B0",
+          "sampleCount": 225
+        }
+      ],
+      "sampleCount": 450,
+      "deltaE00VsPlanConstant": null
+    },
+    {
+      "id": "sign_wood",
+      "register": "exterior-3d",
+      "sourceSample": "sample-1-plaza",
+      "planConstant": "#B98A5E",
+      "planConstantName": "timber (warm wood)",
+      "hex": "#DDD595",
+      "source": "patch",
+      "patchSize": 41,
+      "patches": [
+        {
+          "centre": [
+            0.501,
+            0.647
+          ],
+          "size": 41,
+          "rect": {
+            "x0": 942,
+            "y0": 808,
+            "x1": 982,
+            "y1": 848
+          },
+          "hex": "#DDD595",
+          "sampleCount": 1681
+        }
+      ],
+      "sampleCount": 1681,
+      "deltaE00VsPlanConstant": 23.44
+    },
+    {
+      "id": "interior_floor_wood",
+      "register": "interior-3d",
+      "sourceSample": "sample-2-college-cutaway",
+      "planConstant": "#E8C39A",
+      "planConstantName": "interior wood",
+      "hex": "#F8CDA3",
+      "source": "patch",
+      "patchSize": 41,
+      "patches": [
+        {
+          "centre": [
+            0.6,
+            0.865
+          ],
+          "size": 41,
+          "rect": {
+            "x0": 1132,
+            "y0": 1087,
+            "x1": 1172,
+            "y1": 1127
+          },
+          "hex": "#FBD9B5",
+          "sampleCount": 1681
+        },
+        {
+          "centre": [
+            0.79,
+            0.775
+          ],
+          "size": 41,
+          "rect": {
+            "x0": 1497,
+            "y0": 972,
+            "x1": 1537,
+            "y1": 1012
+          },
+          "hex": "#CF9368",
+          "sampleCount": 1681
+        }
+      ],
+      "sampleCount": 3362,
+      "deltaE00VsPlanConstant": 3.18
+    },
+    {
+      "id": "interior_frame_timber",
+      "register": "interior-3d",
+      "sourceSample": "sample-2-college-cutaway",
+      "planConstant": "#B98A5E",
+      "planConstantName": "timber (warm wood)",
+      "hex": "#D9BC8B",
+      "source": "patch",
+      "patchSize": 31,
+      "patches": [
+        {
+          "centre": [
+            0.5,
+            0.166
+          ],
+          "size": 31,
+          "rect": {
+            "x0": 945,
+            "y0": 197,
+            "x1": 975,
+            "y1": 227
+          },
+          "hex": "#F0BD8F",
+          "sampleCount": 961
+        },
+        {
+          "centre": [
+            0.297,
+            0.42
+          ],
+          "size": 25,
+          "rect": {
+            "x0": 558,
+            "y0": 526,
+            "x1": 582,
+            "y1": 550
+          },
+          "hex": "#A06443",
+          "sampleCount": 625
+        }
+      ],
+      "sampleCount": 1586,
+      "deltaE00VsPlanConstant": 14.74
+    },
+    {
+      "id": "interior_wall_mint",
+      "register": "interior-3d",
+      "sourceSample": "sample-2-college-cutaway",
+      "planConstant": "#CFE3D2",
+      "planConstantName": "interior wall mint",
+      "hex": "#9EAB9C",
+      "source": "patch",
+      "patchSize": 41,
+      "patches": [
+        {
+          "centre": [
+            0.128,
+            0.52
+          ],
+          "size": 41,
+          "rect": {
+            "x0": 226,
+            "y0": 646,
+            "x1": 266,
+            "y1": 686
+          },
+          "hex": "#95A99E",
+          "sampleCount": 1681
+        },
+        {
+          "centre": [
+            0.845,
+            0.3
+          ],
+          "size": 41,
+          "rect": {
+            "x0": 1602,
+            "y0": 364,
+            "x1": 1642,
+            "y1": 404
+          },
+          "hex": "#ACAF9A",
+          "sampleCount": 1681
+        }
+      ],
+      "sampleCount": 3362,
+      "deltaE00VsPlanConstant": 14.09
+    },
+    {
+      "id": "interior_chalkboard",
+      "register": "interior-3d",
+      "sourceSample": "sample-2-college-cutaway",
+      "planConstant": "#5E7D6A",
+      "planConstantName": "chalk green",
+      "hex": "#627962",
+      "source": "patch",
+      "patchSize": 41,
+      "patches": [
+        {
+          "centre": [
+            0.4,
+            0.295
+          ],
+          "size": 41,
+          "rect": {
+            "x0": 748,
+            "y0": 358,
+            "x1": 788,
+            "y1": 398
+          },
+          "hex": "#5C735E",
+          "sampleCount": 1681
+        },
+        {
+          "centre": [
+            0.333,
+            0.474
+          ],
+          "size": 41,
+          "rect": {
+            "x0": 619,
+            "y0": 587,
+            "x1": 659,
+            "y1": 627
+          },
+          "hex": "#637964",
+          "sampleCount": 1681
+        }
+      ],
+      "sampleCount": 3362,
+      "deltaE00VsPlanConstant": 3.09
+    },
+    {
+      "id": "interior_curtain_cream",
+      "register": "interior-3d",
+      "sourceSample": "sample-2-college-cutaway",
+      "planConstant": null,
+      "planConstantName": null,
+      "hex": "#C3A088",
+      "source": "patch",
+      "patchSize": 31,
+      "patches": [
+        {
+          "centre": [
+            0.648,
+            0.44
+          ],
+          "size": 31,
+          "rect": {
+            "x0": 1229,
+            "y0": 548,
+            "x1": 1259,
+            "y1": 578
+          },
+          "hex": "#D4B4A1",
+          "sampleCount": 961
+        },
+        {
+          "centre": [
+            0.838,
+            0.4
+          ],
+          "size": 31,
+          "rect": {
+            "x0": 1594,
+            "y0": 497,
+            "x1": 1624,
+            "y1": 527
+          },
+          "hex": "#AF7F52",
+          "sampleCount": 961
+        }
+      ],
+      "sampleCount": 1922,
+      "deltaE00VsPlanConstant": null
+    },
+    {
+      "id": "interior_window_glow",
+      "register": "interior-3d",
+      "sourceSample": "sample-2-college-cutaway",
+      "planConstant": "#FFD9A0",
+      "planConstantName": "warm lamp",
+      "hex": "#F6D195",
+      "source": "patch",
+      "patchSize": 31,
+      "patches": [
+        {
+          "centre": [
+            0.743,
+            0.415
+          ],
+          "size": 31,
+          "rect": {
+            "x0": 1412,
+            "y0": 516,
+            "x1": 1442,
+            "y1": 546
+          },
+          "hex": "#FBD095",
+          "sampleCount": 961
+        },
+        {
+          "centre": [
+            0.72,
+            0.33
+          ],
+          "size": 31,
+          "rect": {
+            "x0": 1367,
+            "y0": 407,
+            "x1": 1397,
+            "y1": 437
+          },
+          "hex": "#ECD6AD",
+          "sampleCount": 961
+        }
+      ],
+      "sampleCount": 1922,
+      "deltaE00VsPlanConstant": 2.09
+    },
+    {
+      "id": "sky_wash_2d",
+      "register": "flat-2d",
+      "sourceSample": "sample-3-street-alt",
+      "planConstant": "#FBF7EE",
+      "planConstantName": "2D paper",
+      "hex": "#FAE6E3",
+      "source": "patch",
+      "patchSize": 41,
+      "patches": [
+        {
+          "centre": [
+            0.5,
+            0.055
+          ],
+          "size": 41,
+          "rect": {
+            "x0": 940,
+            "y0": 50,
+            "x1": 980,
+            "y1": 90
+          },
+          "hex": "#FDF0E9",
+          "sampleCount": 1681
+        },
+        {
+          "centre": [
+            0.3,
+            0.045
+          ],
+          "size": 41,
+          "rect": {
+            "x0": 556,
+            "y0": 38,
+            "x1": 596,
+            "y1": 78
+          },
+          "hex": "#FAE6E1",
+          "sampleCount": 1681
+        }
+      ],
+      "sampleCount": 3362,
+      "deltaE00VsPlanConstant": 9.04
+    },
+    {
+      "id": "outline_umber_2d",
+      "register": "flat-2d",
+      "sourceSample": "sample-3-street-alt",
+      "planConstant": "#8A6D5A",
+      "planConstantName": "2D outline brown",
+      "hex": "#3C2D22",
+      "source": "cluster",
+      "clusterRule": "largest warm cluster (hue 10-50deg) with L* < 45",
+      "cluster": {
+        "hex": "#3C2D22",
+        "hueDeg": 25.4,
+        "lightness": 19.9,
+        "sharePct": 3.13
+      },
+      "patches": [],
+      "sampleCount": 25600,
+      "sampleBasis": "median-cut cluster subsample (stride 3)",
+      "deltaE00VsPlanConstant": 23.58
+    },
+    {
+      "id": "sage_2d",
+      "register": "flat-2d",
+      "sourceSample": "sample-3-street-alt",
+      "planConstant": "#8FD0A0",
+      "planConstantName": "leaf green",
+      "hex": "#B1C3A2",
+      "source": "patch",
+      "patchSize": 41,
+      "patches": [
+        {
+          "centre": [
+            0.28,
+            0.215
+          ],
+          "size": 41,
+          "rect": {
+            "x0": 518,
+            "y0": 255,
+            "x1": 558,
+            "y1": 295
+          },
+          "hex": "#AEC2A7",
+          "sampleCount": 1681
+        },
+        {
+          "centre": [
+            0.68,
+            0.23
+          ],
+          "size": 41,
+          "rect": {
+            "x0": 1286,
+            "y0": 274,
+            "x1": 1326,
+            "y1": 314
+          },
+          "hex": "#CDCDA2",
+          "sampleCount": 1681
+        }
+      ],
+      "sampleCount": 3362,
+      "deltaE00VsPlanConstant": 9.9
+    },
+    {
+      "id": "grass_wash_2d",
+      "register": "flat-2d",
+      "sourceSample": "sample-3-street-alt",
+      "planConstant": "#B7E2A0",
+      "planConstantName": "grass base",
+      "hex": "#CDD2B4",
+      "source": "patch",
+      "patchSize": 41,
+      "patches": [
+        {
+          "centre": [
+            0.09,
+            0.86
+          ],
+          "size": 41,
+          "rect": {
+            "x0": 153,
+            "y0": 1081,
+            "x1": 193,
+            "y1": 1121
+          },
+          "hex": "#C6D1B8",
+          "sampleCount": 1681
+        },
+        {
+          "centre": [
+            0.72,
+            0.9
+          ],
+          "size": 41,
+          "rect": {
+            "x0": 1362,
+            "y0": 1132,
+            "x1": 1402,
+            "y1": 1172
+          },
+          "hex": "#D0D3B1",
+          "sampleCount": 1681
+        }
+      ],
+      "sampleCount": 3362,
+      "deltaE00VsPlanConstant": 11.77
+    },
+    {
+      "id": "path_bluecream_2d",
+      "register": "flat-2d",
+      "sourceSample": "sample-3-street-alt",
+      "planConstant": "#E9E2D2",
+      "planConstantName": "plaza cobble",
+      "hex": "#CBC0B3",
+      "source": "patch",
+      "patchSize": 41,
+      "patches": [
+        {
+          "centre": [
+            0.47,
+            0.855
+          ],
+          "size": 41,
+          "rect": {
+            "x0": 882,
+            "y0": 1074,
+            "x1": 922,
+            "y1": 1114
+          },
+          "hex": "#D3C6BC",
+          "sampleCount": 1681
+        },
+        {
+          "centre": [
+            0.415,
+            0.775
+          ],
+          "size": 41,
+          "rect": {
+            "x0": 777,
+            "y0": 972,
+            "x1": 817,
+            "y1": 1012
+          },
+          "hex": "#B0B99F",
+          "sampleCount": 1681
+        }
+      ],
+      "sampleCount": 3362,
+      "deltaE00VsPlanConstant": 8.3
+    },
+    {
+      "id": "window_glow_2d",
+      "register": "flat-2d",
+      "sourceSample": "sample-3-street-alt",
+      "planConstant": "#FFD9A0",
+      "planConstantName": "warm lamp",
+      "hex": "#E5D0BF",
+      "source": "patch",
+      "patchSize": 25,
+      "patches": [
+        {
+          "centre": [
+            0.887,
+            0.583
+          ],
+          "size": 25,
+          "rect": {
+            "x0": 1691,
+            "y0": 734,
+            "x1": 1715,
+            "y1": 758
+          },
+          "hex": "#FDEEBF",
+          "sampleCount": 625
+        },
+        {
+          "centre": [
+            0.175,
+            0.393
+          ],
+          "size": 25,
+          "rect": {
+            "x0": 324,
+            "y0": 491,
+            "x1": 348,
+            "y1": 515
+          },
+          "hex": "#DBC8C0",
+          "sampleCount": 625
+        }
+      ],
+      "sampleCount": 1250,
+      "deltaE00VsPlanConstant": 11.63
+    },
+    {
+      "id": "lantern_warm_2d",
+      "register": "flat-2d",
+      "sourceSample": "sample-3-street-alt",
+      "planConstant": "#FFD9A0",
+      "planConstantName": "warm lamp",
+      "hex": "#E1C799",
+      "source": "patch",
+      "patchSize": 21,
+      "patches": [
+        {
+          "centre": [
+            0.263,
+            0.848
+          ],
+          "size": 21,
+          "rect": {
+            "x0": 495,
+            "y0": 1075,
+            "x1": 515,
+            "y1": 1095
+          },
+          "hex": "#E1C799",
+          "sampleCount": 441
+        }
+      ],
+      "sampleCount": 441,
+      "deltaE00VsPlanConstant": 5.92
+    }
+  ],
+  "clusters": {
+    "sample-1-plaza": [
+      {
+        "hex": "#E9E1CF",
+        "sampleCount": 204800,
+        "sharePct": 25
+      },
+      {
+        "hex": "#C5BAA4",
+        "sampleCount": 102400,
+        "sharePct": 12.5
+      },
+      {
+        "hex": "#4F3D2C",
+        "sampleCount": 51200,
+        "sharePct": 6.25
+      },
+      {
+        "hex": "#7F7E59",
+        "sampleCount": 51200,
+        "sharePct": 6.25
+      },
+      {
+        "hex": "#825740",
+        "sampleCount": 51200,
+        "sharePct": 6.25
+      },
+      {
+        "hex": "#8E838B",
+        "sampleCount": 51200,
+        "sharePct": 6.25
+      },
+      {
+        "hex": "#AC8964",
+        "sampleCount": 51200,
+        "sharePct": 6.25
+      },
+      {
+        "hex": "#B39C94",
+        "sampleCount": 51200,
+        "sharePct": 6.25
+      },
+      {
+        "hex": "#DCD290",
+        "sampleCount": 51200,
+        "sharePct": 6.25
+      },
+      {
+        "hex": "#DDBFAD",
+        "sampleCount": 51200,
+        "sharePct": 6.25
+      },
+      {
+        "hex": "#DFAC84",
+        "sampleCount": 51200,
+        "sharePct": 6.25
+      },
+      {
+        "hex": "#E6D5B4",
+        "sampleCount": 51200,
+        "sharePct": 6.25
+      }
+    ],
+    "sample-2-college-cutaway": [
+      {
+        "hex": "#FDFDFD",
+        "sampleCount": 204800,
+        "sharePct": 25
+      },
+      {
+        "hex": "#FCFCF9",
+        "sampleCount": 102400,
+        "sharePct": 12.5
+      },
+      {
+        "hex": "#6C7861",
+        "sampleCount": 51200,
+        "sharePct": 6.25
+      },
+      {
+        "hex": "#774B30",
+        "sampleCount": 51200,
+        "sharePct": 6.25
+      },
+      {
+        "hex": "#A6AA9C",
+        "sampleCount": 51200,
+        "sharePct": 6.25
+      },
+      {
+        "hex": "#A96741",
+        "sampleCount": 51200,
+        "sharePct": 6.25
+      },
+      {
+        "hex": "#AB7A5A",
+        "sampleCount": 51200,
+        "sharePct": 6.25
+      },
+      {
+        "hex": "#AB997B",
+        "sampleCount": 51200,
+        "sharePct": 6.25
+      },
+      {
+        "hex": "#DBC1AD",
+        "sampleCount": 51200,
+        "sharePct": 6.25
+      },
+      {
+        "hex": "#E0A677",
+        "sampleCount": 51200,
+        "sharePct": 6.25
+      },
+      {
+        "hex": "#F3C496",
+        "sampleCount": 51200,
+        "sharePct": 6.25
+      },
+      {
+        "hex": "#FBDDBB",
+        "sampleCount": 51200,
+        "sharePct": 6.25
+      }
+    ],
+    "sample-3-street-alt": [
+      {
+        "hex": "#FFFFFF",
+        "sampleCount": 204800,
+        "sharePct": 25
+      },
+      {
+        "hex": "#B5C0A3",
+        "sampleCount": 102400,
+        "sharePct": 12.5
+      },
+      {
+        "hex": "#C4C5C2",
+        "sampleCount": 102400,
+        "sharePct": 12.5
+      },
+      {
+        "hex": "#DED4BA",
+        "sampleCount": 102400,
+        "sharePct": 12.5
+      },
+      {
+        "hex": "#A4A4A9",
+        "sampleCount": 51200,
+        "sharePct": 6.25
+      },
+      {
+        "hex": "#B19582",
+        "sampleCount": 51200,
+        "sharePct": 6.25
+      },
+      {
+        "hex": "#D4B099",
+        "sampleCount": 51200,
+        "sharePct": 6.25
+      },
+      {
+        "hex": "#E1C4B2",
+        "sampleCount": 51200,
+        "sharePct": 6.25
+      },
+      {
+        "hex": "#3C2D22",
+        "sampleCount": 25600,
+        "sharePct": 3.13
+      },
+      {
+        "hex": "#5C4539",
+        "sampleCount": 25600,
+        "sharePct": 3.13
+      },
+      {
+        "hex": "#7C6C65",
+        "sampleCount": 25600,
+        "sharePct": 3.13
+      },
+      {
+        "hex": "#89949D",
+        "sampleCount": 25600,
+        "sharePct": 3.13
+      }
+    ]
+  }
+}

@@ -1,0 +1,337 @@
+/* Elsewhere Portal — bright pastel, rounded, plain words (Synthesis §8).
+   Body/display ship a system stack (no webfont downloads for those
+   slots); the ONE self-hosted face is the F-2 serif below — Lora,
+   served from this same origin (fonts/), never from a third party. */
+/* Lora (Cyreal, SIL OFL 1.1) — the quoted-words / Ledger serif, fork
+   F-2 cleared 2026-11-03 (assets-src/ASSETS.md, Fonts section).
+   Variable wght 400–700, latin subset; OFL.txt ships beside the
+   files in fonts/. */
+@font-face {
+  font-family: "Lora";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("fonts/lora-variable-latin.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Lora";
+  font-style: italic;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("fonts/lora-italic-variable-latin.woff2") format("woff2");
+}
+:root {
+  --bg: #fdf3e3;
+  --panel: #fffdf8;
+  --ink: #4a3f35;
+  --soft: #8a7a6a;
+  --line: #f0dfc8;
+  --accent: #e77fa2;
+  --sky: #a8d4f0;
+  --grass: #cdeac0;
+  --gold: #f2c14e;
+  /* The quoted-words font (M5.02; tokens artefact font.family.quoted,
+     fork F-2): the design token's value, mirrored here — Lora cleared
+     OFL intake on 2026-11-03 and the swap was this one line, exactly
+     as the token promised (the face itself is the @font-face pair at
+     the top of this file). */
+  --portal-font-family-quoted: "Lora", Georgia, serif;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Nunito", "Fredoka", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+.topbar {
+  display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; align-items: center;
+  padding: 0.7rem 1.2rem; background: #fff8ec; border-bottom: 3px solid var(--line);
+  position: sticky; top: 0; z-index: 5;
+}
+.wordmark { font-size: 1.35rem; font-weight: 800; letter-spacing: 0.02em; }
+.honesty { display: flex; flex-wrap: wrap; gap: 0.4rem 0.9rem; align-items: baseline; }
+.badge { font-weight: 800; padding: 0.15rem 0.6rem; border-radius: 999px; background: #eee; }
+.badge-live { background: #cdeac0; }
+.badge-stale { background: #f6d9a8; }
+.badge-replay { background: #d9ccf5; }
+.badge-loading { background: #e8e2d9; }
+.caption { font-weight: 700; }
+.badge-detail, .soft, .hint { color: var(--soft); }
+.recording-note { font-weight: 800; background: #d9ccf5; color: #4a2f6b; border-radius: 8px; padding: 0.35rem 0.6rem; margin: 0.5rem 0 0; }
+.sample-banner { font-weight: 800; text-align: center; letter-spacing: 0.03em; background: #f8c9a8; color: #6b3410; border: 2px solid #d97b2f; border-radius: 8px; padding: 0.45rem 0.7rem; margin: 0 0 0.6rem; }
+.source-line { margin: 0.5rem 1.2rem 0; color: var(--soft); font-size: 0.92rem; }
+.layout-grid {
+  display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(300px, 1fr);
+  gap: 1rem; padding: 1rem 1.2rem 2rem; align-items: start;
+}
+/* The single-column track is capped too (minmax(0, 1fr), not a
+   bare 1fr): a bare fr track's automatic minimum is the widest
+   item's min-content, and the stage panel's is ~765px — the
+   portrait strip's no-wrap row at phone widths (X4) — so the
+   uncapped track grew to 765px inside a 390px viewport and the
+   sideways scroll survived the .side cap at mobile widths
+   (same defect, second driver; 2026-11-03, lane-overflow-fix).
+   Capped, the panel sizes to the viewport and the strip's own
+   overflow-x: auto engages, as X4 designed. */
+@media (max-width: 900px) { .layout-grid { grid-template-columns: minmax(0, 1fr); } }
+.panel {
+  background: var(--panel); border: 2px solid var(--line); border-radius: 18px;
+  padding: 0.9rem 1rem; box-shadow: 0 3px 0 rgba(190, 150, 90, 0.15);
+}
+.panel h2 { margin: 0 0 0.6rem; font-size: 1.05rem; }
+/* The side column's single track is capped at the aside's own
+   width (minmax(0, 1fr)): an auto track sizes to the widest
+   panel's min-content, and the Growth book's value-list twin
+   table (M6.08) carries a ~1,632px min-content — uncapped, it
+   blew this track to 1,632px inside a 466px aside and the whole
+   document scrolled sideways at every width (defect found by
+   the G-J1 round-7 Part 3 verification, 2026-11-03; record:
+   plan-to-complete/lane-overflow-fix.md). Capped, each panel
+   sizes to the track and the twin wrap's own overflow-x: auto
+   engages, as designed. */
+.side { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+#stage { width: 100%; height: auto; border-radius: 12px; background: var(--grass); cursor: pointer; }
+.now-line { font-size: 1.02rem; font-weight: 700; margin: 0.6rem 0 0.3rem; }
+.follow-bar { background: #eaf4ff; border: 2px solid var(--sky); border-radius: 12px; padding: 0.45rem 0.7rem; font-weight: 700; }
+.away-panel { background: #f3efff; border: 2px solid #c9b8f0; border-radius: 12px; padding: 0.55rem 0.8rem; margin-top: 0.5rem; }
+.away-panel h3 { margin: 0 0 0.3rem; font-size: 1rem; }
+.away-panel p { margin: 0.3rem 0; }
+.away-panel ol { margin: 0.3rem 0; padding-left: 1.4rem; display: grid; gap: 0.2rem; }
+.episodes { list-style: none; margin: 0.4rem 0; padding: 0; display: grid; gap: 0.45rem; }
+.episode-row { width: 100%; text-align: left; background: #fff8ec; border: 2px solid var(--line); border-radius: 12px; padding: 0.45rem 0.65rem; cursor: pointer; display: grid; gap: 0.15rem; font: inherit; color: var(--ink); }
+.episode-row:hover { border-color: var(--accent); }
+.episode-place { font-weight: 800; }
+.episode-meta { color: var(--soft); font-size: 0.88rem; }
+.talk-area { background: #fdf0f5; border: 2px solid #f2b8cd; border-radius: 12px; padding: 0.55rem 0.75rem; margin-top: 0.55rem; }
+.talk-disclosure { font-weight: 700; margin: 0.2rem 0; }
+.talk-bubbles { display: grid; gap: 0.45rem; margin: 0.45rem 0; }
+.bubble { background: #fffdf8; border: 2px solid var(--line); border-radius: 14px; padding: 0.4rem 0.65rem; }
+.bubble-who { font-weight: 800; color: #b04a74; font-size: 0.88rem; }
+.bubble-words { margin: 0.15rem 0 0; white-space: pre-wrap; overflow-wrap: anywhere; font-family: var(--portal-font-family-quoted); }
+/* M5.01: the scene-cap summary line — counts only, never quoted
+   words; visually a plain note, NOT a bubble, so summarised speech
+   is never dressed as speech. */
+.talk-summary { font-weight: 700; background: #fdf6e0; border: 2px dashed var(--gold); border-radius: 12px; padding: 0.45rem 0.65rem; margin: 0.45rem 0 0; }
+.bubble-head { display: flex; justify-content: space-between; align-items: baseline; gap: 0.5rem; }
+
+/* Surface consumption (M5.06): the talk area's readability strip —
+   the current (or next, pre-act) act rendered from the ONE
+   presentation model (logic.talkActPresentation over
+   readabilityPresentation): head icon + its word, the act's tag
+   line where it carries one, and the model's caption verbatim.
+   Colour is never the only signal — glyph, word and caption all
+   ride together. */
+.talk-readability { display: grid; gap: 0.3rem; margin: 0.4rem 0; }
+.talk-act-row { display: flex; gap: 0.45rem; align-items: baseline; flex-wrap: wrap; background: #fff; border: 1.5px solid var(--line); border-radius: 10px; padding: 0.3rem 0.55rem; }
+.talk-act-phase { font-size: 0.78rem; font-weight: 800; color: var(--soft); }
+.talk-act-glyph { font-weight: 800; }
+.talk-act-word { font-weight: 800; color: #b04a74; }
+.talk-act-tag { font-size: 0.78rem; font-weight: 800; background: #fdf3d8; border: 1.5px solid #d9a441; border-radius: 999px; padding: 0.02rem 0.5rem; }
+.talk-act-caption { color: var(--ink); }
+
+/* Fenced speech (OM15-C4): a transcript bubble carrying recorded
+   words is framed as quoted record speech — a full accent frame
+   with a heavy left bar (the fence rail) on a tinted ground, plus
+   the "❝ Recorded words" tag in its header — so the words read as
+   a quotation from the public feeds at a glance, never as Portal's
+   own voice. The frame colour is --accent (#e77fa2), the same
+   colour logic.mjs exports as SPEECH_FENCE_COLOR for the stage
+   bubble's fence. */
+.bubble.speech-fence { background: #fff5f9; border: 2px solid var(--accent); border-left: 8px solid var(--accent); }
+.speech-fence-tag { font-weight: 800; font-size: 0.78rem; color: #b04a74; background: #fbe3ee; border: 1.5px dashed var(--accent); border-radius: 999px; padding: 0.05rem 0.5rem; white-space: nowrap; }
+.acts { list-style: none; margin: 0.4rem 0; padding: 0; display: grid; gap: 0.5rem; }
+.acts-sub { margin: 0.25rem 0 0; padding-left: 1.2rem; color: var(--soft); font-size: 0.88rem; display: grid; gap: 0.15rem; }
+.controls { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 0.4rem; }
+button {
+  font: inherit; font-weight: 700; color: var(--ink); background: #ffe9a8;
+  border: 2px solid #e3b94e; border-radius: 999px; padding: 0.4rem 0.9rem; cursor: pointer;
+}
+button:hover { background: #ffdf85; }
+button.follow-small { background: #dff2ff; border-color: var(--sky); padding: 0.15rem 0.6rem; font-size: 0.85rem; }
+.ticker, .roster { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.45rem; }
+.ticker li, .roster li {
+  border: 2px solid var(--line); border-radius: 12px; padding: 0.45rem 0.6rem; background: #fff;
+}
+.ticker li { cursor: pointer; }
+.ticker .kind, .roster .state-chip {
+  display: inline-block; font-size: 0.78rem; font-weight: 800; background: var(--sky);
+  border-radius: 999px; padding: 0.05rem 0.5rem; margin-right: 0.4rem;
+}
+.ticker .when, .roster .when { color: var(--soft); font-size: 0.85rem; }
+.roster .who { font-weight: 800; }
+.roster .dot { display: inline-block; width: 0.8em; height: 0.8em; border-radius: 50%; margin-right: 0.45rem; border: 2px solid rgba(0,0,0,0.15); vertical-align: -0.05em; }
+/* M4.25: the asleep citizen's dimmed chip — dot + name at the asleep
+   opacity (0.55, ASLEEP_OPACITY in logic.mjs: one value, every
+   surface). The wording on the row still carries the state in words;
+   the dim is the chip treatment, never the only signal. */
+.roster li.asleep .dot, .roster li.asleep .who { opacity: 0.55; }
+.growth { display: grid; grid-template-columns: 1fr auto; gap: 0.25rem 1rem; margin: 0; }
+.growth dt { color: var(--soft); } .growth dd { margin: 0; font-weight: 800; text-align: right; }
+#card .prov { background: #f7efe2; border-radius: 10px; padding: 0.5rem 0.6rem; margin-top: 0.5rem; font-size: 0.92rem; }
+#card .binding-line { color: var(--soft); font-size: 0.92rem; }
+#card .profile-id { font-weight: 800; color: var(--ink); }
+#card h3 { margin: 0 0 0.3rem; }
+.about p { margin: 0.4rem 0; }
+
+/* Place conflict (M3.04): the inspector's conflict section — amber,
+   factual, never alarming; a conflict is data, shown as data. */
+.conflict { border: 1px solid #d9a441; background: #fdf3d8; border-radius: 8px; padding: 0.5rem 0.7rem; margin: 0.6rem 0; }
+.conflict ul { margin: 0.3rem 0 0.3rem 1.1rem; padding: 0; }
+.ticker li.movement { background: #fdf6e0; }
+
+/* Reconstructed journeys (M3.06): the stage note under the now-line —
+   what the journeys feed holds, and why it is empty when it is. */
+.journeys-note { color: var(--soft); font-size: 0.92rem; margin: 0.35rem 0 0; }
+
+/* Find & watch (M6): the reset banner (M6.06/D6) — violet like the
+   recording family, factual, shown only when a live bundle opens a
+   new world book. */
+.reset-banner { font-weight: 700; background: #efe9fb; color: #4a2f6b; border: 2px solid #b39de0; border-radius: 8px; padding: 0.45rem 0.7rem; margin: 0 0 0.6rem; }
+
+/* M6.01: the ticker's per-item actions and deadline line. The chip
+   itself reuses .ticker .kind — icon + word, always paired. */
+.ticker .tk-actions { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.35rem; }
+.ticker .deadline, #card .deadline { font-weight: 800; color: #8a6414; margin: 0.3rem 0 0; }
+
+/* M6.04: office title words ride beside the name (roster) and as
+   their own line (card), office-first, words only. The namesake tag
+   distinguishes two records that share a name, at a glance. */
+.roster .title-word { font-weight: 800; color: #b04a74; }
+#card .title-line { font-weight: 800; color: #b04a74; margin: 0.1rem 0 0.3rem; }
+.namesake-tag { display: inline-block; font-size: 0.78rem; font-weight: 800; background: #fdf3d8; border: 1.5px solid #d9a441; border-radius: 999px; padding: 0.02rem 0.5rem; vertical-align: 0.12em; }
+#card .namesake-line { background: #fdf3d8; border-radius: 10px; padding: 0.45rem 0.6rem; font-size: 0.92rem; }
+#card .dot { display: inline-block; width: 0.8em; height: 0.8em; border-radius: 50%; margin-right: 0.45rem; border: 2px solid rgba(0,0,0,0.15); vertical-align: -0.05em; }
+
+/* M6.06: the provenance inspector — the applicable evidence class is
+   marked with the accent border + ground; the other value stays
+   fully legible beside it (both values shown, always). */
+#inspector .insp-claim { font-weight: 700; }
+#inspector .insp-classes { list-style: none; margin: 0.3rem 0; padding: 0; display: grid; gap: 0.35rem; }
+#inspector .insp-classes li { border: 2px solid var(--line); border-radius: 10px; padding: 0.35rem 0.55rem; font-size: 0.92rem; }
+#inspector .insp-classes li.marked { border-color: var(--accent); background: #fff5f9; }
+
+/* M6.02: the find nav + portrait strip + building directory. */
+.find-nav { display: flex; gap: 0.45rem; flex-wrap: wrap; align-items: center; margin-top: 0.6rem; }
+.find-nav .find-label { font-weight: 800; }
+.strip-heading { margin: 0.7rem 0 0.35rem; font-size: 0.95rem; }
+.portrait-strip { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.portrait-strip .strip-count { flex-basis: 100%; margin: 0.2rem 0 0; }
+button.portrait { display: grid; justify-items: center; gap: 0.15rem; background: #fff; border: 2px solid var(--line); border-radius: 14px; padding: 0.45rem 0.55rem; min-width: 5.2rem; }
+button.portrait:hover { border-color: var(--accent); background: #fff; }
+.portrait-dot { display: inline-block; min-width: 2.2rem; padding: 0.35rem 0.4rem; border-radius: 999px; border: 2px solid rgba(0,0,0,0.15); font-weight: 800; font-size: 0.8rem; color: #4a3f35; text-align: center; }
+.portrait-name { font-size: 0.82rem; font-weight: 700; }
+.portrait-office { font-size: 0.78rem; font-weight: 800; color: #b04a74; }
+button.portrait.asleep .portrait-dot, button.portrait.asleep .portrait-name { opacity: 0.55; }
+.directory { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.45rem; }
+.directory li { border: 2px solid var(--line); border-radius: 12px; padding: 0.45rem 0.6rem; background: #fff; }
+.directory .dir-head { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; }
+.directory .dir-label { font-weight: 800; }
+.directory .when { color: var(--soft); font-size: 0.85rem; margin-top: 0.25rem; display: flex; gap: 0.35rem; flex-wrap: wrap; align-items: center; }
+
+/* Growth book (M6.08) */
+.growth-book { margin-top: 1rem; }
+.growth-book h3 { margin: 0 0 0.4rem; font-size: 0.98rem; }
+.growth-book h4 { margin: 0.8rem 0 0.35rem; font-size: 0.9rem; }
+.growth-charts { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 0.6rem 1rem; }
+.growth-fig { margin: 0; }
+.growth-fig figcaption { font-size: 0.82rem; color: var(--soft); margin-bottom: 0.2rem; }
+.growth-chart { width: 100%; height: 56px; color: #7a5ba6; display: block; }
+.growth-twin-wrap { overflow-x: auto; }
+.growth-twin { border-collapse: collapse; font-size: 0.8rem; }
+.growth-twin th, .growth-twin td { padding: 0.15rem 0.45rem; text-align: right; white-space: nowrap; }
+.growth-twin th[scope="row"], .growth-twin th[scope="col"]:first-child { text-align: left; }
+.growth-twin tbody tr:nth-child(odd) { background: rgba(0, 0, 0, 0.03); }
+.firsts-wall { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.55rem; }
+.first-date { font-weight: 800; margin-right: 0.5rem; }
+
+/* Citizen page (M6.05) */
+.page-badges { margin: 0.2rem 0 0.4rem; display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.badge-word { display: inline-block; font-weight: 800; font-size: 0.82rem; color: #b04a74; background: #fdeef4; border: 1.5px solid #e77fa2; border-radius: 999px; padding: 0.05rem 0.55rem; }
+#citizen-page h4 { margin: 0.75rem 0 0.3rem; font-size: 0.92rem; }
+.page-facts { display: grid; grid-template-columns: auto 1fr; gap: 0.15rem 0.7rem; margin: 0.2rem 0; }
+.page-facts dt { font-weight: 700; }
+.page-facts dd { margin: 0; }
+.page-story { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
+.page-story li { border: 2px solid var(--line); border-radius: 12px; padding: 0.45rem 0.6rem; background: #fff; }
+.arrival-line { font-weight: 700; }
+
+/* Frontier fill-in map (M6.11) */
+#frontier-canvas { width: 100%; height: auto; display: block; border-radius: 10px; }
+.frontier-detail { font-weight: 700; margin: 0.5rem 0; }
+.frontier-legend { margin: 0.3rem 0; padding-left: 1.1rem; display: grid; gap: 0.25rem; }
+.frontier-names, .frontier-routes { margin: 0.3rem 0; padding-left: 1.1rem; display: grid; gap: 0.25rem; }
+.frontier-handoff { font-weight: 700; background: #fdf3d8; border: 1.5px solid #d9a441; border-radius: 10px; padding: 0.4rem 0.6rem; }
+
+/* Rhythm header (M6.14) — the resting frame is dusk-TONED; no
+   state is ever labelled with a day-part word. */
+.rhythm-header { margin: 0.4rem 0; }
+.rhythm-state { font-weight: 800; font-size: 1.02rem; }
+.rhythm-basis { color: var(--ink); }
+.rhythm-clock, .rhythm-weather { display: block; color: var(--soft); font-size: 0.88rem; margin-top: 0.15rem; }
+.rhythm-header.rhythm-dusk { background: linear-gradient(180deg, #f6dfC0, #efd9e8); border-radius: 10px; padding: 0.45rem 0.6rem; }
+
+/* Chronicle + Ledger + calendar (M6.09/M6.10) */
+.chronicle-items, .calendar-entries { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.55rem; }
+.chronicle-item, .calendar-entry { border: 2px solid var(--line); border-radius: 12px; padding: 0.45rem 0.6rem; background: #fff; }
+.chronicle-text { margin: 0; }
+.chronicle-meta { margin: 0.2rem 0 0; }
+.since-visit { border: 2px dashed var(--line); border-radius: 12px; padding: 0.45rem 0.6rem; margin: 0.6rem 0; }
+.ledger { margin-top: 0.8rem; }
+.ledger-quote { margin: 0.5rem 0; }
+/* The quoted-words register: the F-2 token slot (the serif face is
+   still an outstanding intake — the slot's stand-in renders). */
+.ledger-words { font-family: var(--portal-font-family-quoted); white-space: pre-wrap; overflow-wrap: anywhere; margin: 0.15rem 0 0; }
+
+/* Quiet page (M6.13) — a designed state, not an error: no figures,
+   no motion, no countdown; three honest offers and the population
+   as three distinct numbers. */
+.quiet-panel { border: 2px solid var(--line); border-radius: 12px; background: var(--panel); padding: 0.6rem 0.8rem; margin-top: 0.5rem; }
+.quiet-offers, .quiet-population { margin: 0.3rem 0; padding-left: 1.1rem; display: grid; gap: 0.25rem; }
+
+/* M6 final lane — welcome overlay (M6.12), display panel + scene
+   list (M6.15), focus visibility, and the 390px mobile block (X4). */
+
+/* The welcome card sits over the LIVE diorama, dimmed — the town
+   keeps moving behind it; the overlay is a card, never a gate. */
+.welcome-overlay { position: fixed; inset: 0; z-index: 40; background: rgba(74, 58, 40, 0.45); display: flex; align-items: center; justify-content: center; padding: 1rem; }
+.welcome-overlay[hidden] { display: none; }
+.welcome-card { background: var(--panel); border-radius: 14px; padding: 1rem 1.2rem; max-width: 34rem; max-height: 90vh; overflow-y: auto; }
+.welcome-card h2 { margin-top: 0; }
+.welcome-facts { display: grid; gap: 0.5rem; padding-left: 1.2rem; }
+.welcome-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.welcome-small { color: var(--soft); font-size: 0.88rem; }
+
+.strip-hint { font-weight: 700; color: #b04a74; margin: 0.2rem 0 0.4rem; }
+
+#return-chip { background: #fdeef4; border-color: var(--accent); }
+
+.display-panel { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 0.6rem; }
+.display-toggle { display: grid; gap: 0.2rem; font-size: 0.88rem; font-weight: 700; color: var(--soft); }
+.display-toggle select { font: inherit; color: var(--ink); padding: 0.3rem 0.4rem; border: 2px solid var(--line); border-radius: 8px; background: #fff; }
+
+.scene-words { margin-top: 0.8rem; }
+.scene-words h3 { margin: 0 0 0.3rem; font-size: 0.95rem; }
+.scene-list { margin: 0; padding-left: 1.1rem; display: grid; gap: 0.2rem; font-size: 0.92rem; }
+/* The live region is for assistive tech: present in the reading
+   order, out of the visual flow. */
+.sr-live { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+.attributions { margin: 0; padding-left: 1.1rem; display: grid; gap: 0.25rem; }
+
+/* Focus is always visible (X1) — no outline is ever removed. */
+:focus-visible { outline: 3px solid #b04a74; outline-offset: 2px; border-radius: 4px; }
+
+/* Buttons keep a real touch target everywhere (X4: ≥44px tall). */
+button { min-height: 2.2rem; }
+
+/* X4 — mobile-complete at 390px: one column, the strip scrolls with
+   names visible, the canvas fits the width, every target ≥44px. */
+@media (max-width: 480px) {
+  .layout-grid { grid-template-columns: minmax(0, 1fr); }
+  .topbar { flex-wrap: wrap; }
+  #stage { width: 100%; height: auto; }
+  .portrait-strip { overflow-x: auto; flex-wrap: nowrap; }
+  button, .display-toggle select { min-height: 44px; }
+  .welcome-card { max-width: 100%; }
+}

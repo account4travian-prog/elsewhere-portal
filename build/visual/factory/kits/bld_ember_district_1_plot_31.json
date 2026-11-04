@@ -1,0 +1,56 @@
+{
+ "schema": "portal.building-kit/v1",
+ "item": "M4.14 building kit card (visual-plan/02 \u00a75 recipe, footprint-specs v1 contract)",
+ "code": "EMBER_DISTRICT_1_PLOT_31",
+ "slug": "bld_ember_district_1_plot_31",
+ "label": "Ember Ledger Press (District 1, Plot 31)",
+ "designCode": "B8",
+ "provenanceClass": "record-attested",
+ "footprint": {
+  "depthUnits": 4,
+  "modulesDeep": 2,
+  "modulesWide": 3,
+  "widthUnits": 6
+ },
+ "parcel": {
+  "depthUnits": 8,
+  "provenance": "Derived \u2014 district-plot parcel rule (cell minus 1-unit street margin per side).",
+  "widthUnits": 8
+ },
+ "storeys": null,
+ "door": {
+  "anchorDoor": "threshold centre of the east face",
+  "anchorSignHeightUnits": 2.6,
+  "face": "east",
+  "heightUnits": 2.2,
+  "widthUnits": 2
+ },
+ "gateFace": null,
+ "family": "work",
+ "basePieces": "MegaKit workshop-scale body",
+ "reads": "The printing press (CUSTOM) stands in an open front bay on the east (door) face so the read survives town altitude: tall vertical screw + horizontal platen + lever. Newspaper stand at the door.",
+ "custom": [
+  {
+   "name": "printing_press",
+   "kind": "machine",
+   "triCap": 600,
+   "note": "CUSTOM primitives: frame, platen, screw, lever; platen on a pivot sub-node press_platen (one moving part, visual-plan/02 \u00a75.1 B8)"
+  }
+ ],
+ "pieces": [
+  "walls:south:straight,window,straight",
+  "walls:north:straight,window,straight",
+  "walls:west:straight,window",
+  "Roof_RoundTiles_4x6",
+  "gable infills x2 (custom prism)",
+  "custom:printing_press (512 tris)",
+  "newspaper stand"
+ ],
+ "condition": null,
+ "asBuilt": {
+  "glb": "../factory/outputs-buildings/bld_ember_district_1_plot_31.glb",
+  "bytes": 282772,
+  "tris": 4144,
+  "notes": []
+ }
+}

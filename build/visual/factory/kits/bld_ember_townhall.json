@@ -1,0 +1,53 @@
+{
+ "schema": "portal.building-kit/v1",
+ "item": "M4.14 building kit card (visual-plan/02 \u00a75 recipe, footprint-specs v1 contract)",
+ "code": "EMBER_TOWNHALL",
+ "slug": "bld_ember_townhall",
+ "label": "Town Hall",
+ "designCode": "B3",
+ "provenanceClass": "feed-evidenced",
+ "footprint": {
+  "depthUnits": 6,
+  "modulesDeep": 3,
+  "modulesWide": 4,
+  "widthUnits": 8
+ },
+ "parcel": null,
+ "storeys": null,
+ "door": {
+  "anchorDoor": "threshold centre of the south face",
+  "anchorSignHeightUnits": 2.6,
+  "face": "south",
+  "heightUnits": 2.2,
+  "widthUnits": 2
+ },
+ "gateFace": null,
+ "family": "civic",
+ "basePieces": "Village Pack bell tower silhouette + MegaKit body",
+ "reads": "Bell tower on the frontage face line; clock face texture, hands fixed at 9:00 (a working clock would claim a time the record does not have); civic-gold banner; notice board.",
+ "custom": [
+  {
+   "name": "clock_face",
+   "kind": "texture",
+   "note": "rendered canvas texture, hands fixed 9:00"
+  }
+ ],
+ "pieces": [
+  "walls:south:straight,window,door,window",
+  "walls:north:straight,window,straight,window",
+  "walls:east:straight,window,straight",
+  "walls:west:straight,window,straight",
+  "Roof_RoundTiles_6x6",
+  "gable infills x2 (custom prism)",
+  "village:Bell_Tower@1.55"
+ ],
+ "condition": null,
+ "asBuilt": {
+  "glb": "../factory/outputs-buildings/bld_ember_townhall.glb",
+  "bytes": 762744,
+  "tris": 17566,
+  "notes": [
+   "tower scaled 1.55 for silhouette; spec tower footprint was a derived 2x2 guess, height unstated"
+  ]
+ }
+}

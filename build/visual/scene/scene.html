@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elsewhere Portal — 3D scene scaffold (VW)</title>
+<style>
+  :root { color-scheme: light; }
+  body { margin: 0; font-family: "Nunito", system-ui, sans-serif; background: #f7efe2; color: #4a3b2c; }
+  header { padding: 10px 14px 6px; }
+  header h1 { font-size: 17px; margin: 0 0 2px; }
+  header p { margin: 0; font-size: 12.5px; opacity: .85; max-width: 110ch; }
+  #stage-wrap { position: relative; margin: 8px 14px; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 24px rgba(105,74,59,.25); }
+  canvas { display: block; width: 100%; height: auto; }
+  #labels { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+  .lbl { position: absolute; transform: translate(-50%, -100%); font-size: 12.5px; font-weight: 700;
+         background: rgba(255,246,234,.88); border: 1px solid rgba(105,74,59,.35); border-radius: 999px;
+         padding: 1px 7px; white-space: nowrap; }
+  /* M5.08 station labels: shown only while an interior is open —
+     the room's named stations, in the fence register. */
+  .lbl.station { background: rgba(255,240,246,.92); border: 1px dashed #b04a74; color: #7c2d4e;
+         font-size: 11.5px; }
+  #bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 4px 14px; }
+  button { font: inherit; font-size: 13px; border: 1px solid #99775b; background: #fff6ea; color: #4a3b2c;
+           border-radius: 999px; padding: 4px 12px; cursor: pointer; }
+  button[aria-pressed="true"] { background: #e5ce9d; }
+  #info { font-size: 13px; margin: 4px 14px; min-height: 1.2em; }
+  /* Talk overlay (M5 consumption): the staged bubble from the ONE
+     consumption model — fenced recorded words (dashed pink frame,
+     the app surfaces' fence), the K1 header, the "Read in full"
+     marker as its own line, and the readability rows (icon + word +
+     caption) under it. At town altitude it collapses to icon +
+     caption only. Positioned by scene.mjs over the speaker. */
+  #talk-overlay { position: absolute; z-index: 3; max-width: 300px; pointer-events: none;
+    background: rgba(255,253,248,.97); border: 2px solid #e77fa2; outline: 1.5px dashed #e77fa2;
+    outline-offset: 3px; border-radius: 12px; padding: 7px 10px; font-size: 12.5px;
+    transform: translate(-50%, -100%); }
+  #talk-overlay .tk-fence { font-weight: 800; font-size: 11px; color: #b04a74; }
+  #talk-overlay .tk-head { font-weight: 800; color: #b04a74; margin-top: 1px; }
+  #talk-overlay .tk-words { font-family: Georgia, serif; margin: 2px 0 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+  #talk-overlay .tk-marker { font-weight: 800; font-size: 11px; color: #b04a74; margin-top: 2px; }
+  #talk-overlay .tk-read { margin-top: 4px; display: grid; gap: 2px; }
+  #talk-overlay .tk-caption { margin: 3px 0 0; font-weight: 700; }
+  #rail { font-size: 12.5px; margin: 2px 14px; padding: 6px 10px; background: #fff6ea;
+          border: 1px solid rgba(105,74,59,.35); border-radius: 10px; }
+  #probe-out { font: 12.5px/1.5 ui-monospace, Menlo, monospace; white-space: pre-wrap; margin: 6px 14px 16px;
+               background: #fffaf1; border: 1px solid rgba(105,74,59,.3); border-radius: 10px; padding: 8px 12px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Elsewhere Portal — 3D scene</h1>
+  <p>The Ember building set (M4.14) on the real shared layout: factory-built places on their
+     footprint specs, citizens in factory kits, the Look Bible v0 baseline rig, and probe pads
+     that measure the shadow/lit gate. A place whose building kit fails to load keeps its
+     placeholder block, and the boot line below says how many kits landed.
+     Keys: <b>O</b> overview · <b>F</b> follow · <b>[</b> / <b>]</b> cycle follow target · click a building or citizen to follow it.</p>
+  <p>The street plan, building placement, and every position here are Portal's staged presentation
+     over the record's place codes (layout v3) — not measured Elsewhere geography — and the ground
+     dressing implies no feature the record does not name.</p>
+</header>
+
+<div id="stage-wrap">
+  <canvas id="stage" width="1280" height="800"></canvas>
+  <div id="labels" aria-hidden="true"></div>
+  <div id="talk-overlay" hidden>
+    <div class="tk-fence" id="talk-fence"></div>
+    <div class="tk-head" id="talk-head"></div>
+    <p class="tk-words" id="talk-words"></p>
+    <div class="tk-marker" id="talk-marker"></div>
+    <div class="tk-read" id="talk-read"></div>
+    <p class="tk-caption" id="talk-caption"></p>
+  </div>
+</div>
+
+<div id="bar">
+  <button id="btn-overview" type="button" aria-pressed="true">Overview — orthographic 35° (O)</button>
+  <button id="btn-follow" type="button" aria-pressed="false">Follow — perspective 28° (F)</button>
+  <button id="btn-prev" type="button">◀ target ([)</button>
+  <button id="btn-next" type="button">target ▶ (])</button>
+  <button id="btn-probe" type="button">Re-run probe</button>
+  <button id="btn-recentre" type="button" hidden>Re-centre</button>
+  <button id="btn-demo" type="button" aria-pressed="false">▶ Replay the demo journey in 3D (a recording)</button>
+  <button id="btn-talk" type="button" aria-pressed="false">▶ Play the recorded conversations in 3D (a recording)</button>
+  <button id="btn-calmer" type="button" aria-pressed="false">Calmer — stepped poses, no glide</button>
+  <span id="mode-line"></span>
+</div>
+
+<div id="clipbar" aria-label="Work-clip preview">
+  <span style="font-size:13px">Clip preview on the clicked citizen (the scene's work vocabulary — a preview, not the record):</span>
+  <button type="button" data-work-clip="work-hammer">Hammer</button>
+  <button type="button" data-work-clip="work-dig">Dig</button>
+  <button type="button" data-work-clip="work-pickaxe">Pickaxe</button>
+  <button type="button" data-work-clip="work-saw">Saw</button>
+  <button type="button" data-work-clip="work-chop">Chop</button>
+  <button type="button" data-work-clip="work-fish">Fish</button>
+  <button type="button" data-work-clip="rest-lie">Rest pose</button>
+  <button type="button" data-work-clip="idle">Back to idle</button>
+</div>
+
+<div id="rail" hidden></div>
+
+<p id="info">Loading the layout and the live bundle…</p>
+<div id="probe-out">Probe: waiting for first render…</div>
+
+<script type="importmap">
+{ "imports": { "three": "./vendor/three.module.js" } }
+</script>
+<script type="module" src="scene.mjs"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!doctype html>
+<!-- M5.02 shot set: every bubble-kit variant, rendered from the ONE
+     shared model (../logic.mjs) under the app's real stylesheet, so
+     the screenshot ladder can capture the kit's forms in one frame.
+     The utterances below are FIXTURE data in the shape the LIVE
+     FEED delivers: the record fences citizen words in
+     <<ELSEWHERE_UNTRUSTED_…>> markers, but the deriver
+     (build/data/derive.mjs, unfence()) strips those markers before
+     the words reach the feed, and the model's presentation fence
+     (label, quote glyph, frame class) is what a reader sees around
+     them. The fixture therefore carries UNFENCED text — feeding it
+     raw markers would render words no live bubble ever shows
+     (screenshot-lane finding F2, fixed 2026-11-03). This page is a
+     development artefact, never part of the published set. The
+     stage variant is drawn here as its kit output (display text +
+     marker line) because the live stage draws the same kit on
+     canvas; the panel variants are the app's own DOM, class for
+     class. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Portal — bubble kit variants (M5.02 shot set)</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { padding: 1rem 1.2rem; }
+  .shot { margin: 0 0 1.4rem; max-width: 560px; }
+  .shot h2 { font-size: 0.95rem; margin: 0 0 0.4rem; }
+  .stage-marker { font-weight: 800; font-size: 0.78rem; color: #b04a74; margin: 0.25rem 0 0; }
+  .town-chip { display: inline-flex; gap: 0.45rem; align-items: center; background: #fffdf8; border: 2px solid var(--line); border-radius: 999px; padding: 0.3rem 0.7rem; font-weight: 700; }
+  .town-icon { background: var(--accent); color: #fff; border-radius: 999px; padding: 0.05rem 0.5rem; font-size: 0.78rem; font-weight: 800; }
+</style>
+</head>
+<body>
+<h1>Bubble kit variants — M5.02 shot set</h1>
+<div id="shots"></div>
+<script type="module">
+  import { fencedSpeech, bubbleKit, talkAtAltitude, conversationStaging } from '../logic.mjs';
+
+  // Fixture texts are UNFENCED — the deriver's output shape, exactly
+  // as the live feed hands steps to this model (see header note).
+  const shortStep = { speaker: 'Nia Okafor', at: '2026-11-02T10:00:00Z', text: 'Good morning.' };
+  const longStep = {
+    speaker: 'Atlas Meridian', at: '2026-11-01T19:09:00Z',
+    text: 'Good questions, both — and they are the same question, asked from the two ends of the corridor: what does the record actually show, and what are we only inferring because the pattern looks familiar from here.',
+  };
+  const episode = {
+    place: 'EMBER_PLAZA_OF_UNITY', firstUtc: shortStep.at, disclosure: 'd',
+    participants: ['Nia Okafor', 'Kavi Marlow'],
+    utterances: [
+      { at: shortStep.at, by: 'Nia Okafor', said: shortStep.text },
+      { at: '2026-11-02T10:01:00Z', by: 'Kavi Marlow', said: 'Morning, Nia.' },
+    ],
+  };
+
+  const root = document.getElementById('shots');
+  const section = (title) => {
+    const wrap = document.createElement('section');
+    wrap.className = 'shot';
+    const h = document.createElement('h2');
+    h.textContent = title;
+    wrap.append(h);
+    root.append(wrap);
+    return wrap;
+  };
+  // The panel bubble, built exactly as app.js renderTalk builds it.
+  const panelBubble = (step) => {
+    const fenced = fencedSpeech(step);
+    const kit = bubbleKit(step);
+    const bubble = document.createElement('div');
+    bubble.className = `bubble ${fenced.frameClass}`;
+    const head = document.createElement('div');
+    head.className = 'bubble-head';
+    const who = document.createElement('span');
+    who.className = 'bubble-who';
+    who.textContent = kit.header;
+    const tag = document.createElement('span');
+    tag.className = 'speech-fence-tag';
+    tag.textContent = `${fenced.quote} ${fenced.label}`;
+    head.append(who, tag);
+    const words = document.createElement('p');
+    words.className = 'bubble-words';
+    words.textContent = fenced.text;
+    bubble.append(head, words);
+    return bubble;
+  };
+
+  section('Variant 1 — panel, short utterance (whole)').append(panelBubble(shortStep));
+  section('Variant 2 — panel, long utterance (the panel never truncates)').append(panelBubble(longStep));
+
+  const stageWrap = section('Variant 3 — stage kit output, long utterance (marked prefix)');
+  const stageKit = bubbleKit(longStep, { variant: 'stage' });
+  const stageBubble = panelBubble(longStep);
+  stageBubble.querySelector('.bubble-words').textContent = stageKit.displayText;
+  const marker = document.createElement('p');
+  marker.className = 'stage-marker';
+  marker.textContent = stageKit.marker;
+  stageBubble.append(marker);
+  stageWrap.append(stageBubble);
+
+  const townWrap = section('Variant 4 — town altitude (icon + caption, no bubble)');
+  const staging = conversationStaging(episode, {});
+  const town = talkAtAltitude(staging, 0, 'town', () => 'the Plaza of Unity');
+  const chip = document.createElement('span');
+  chip.className = 'town-chip';
+  const icon = document.createElement('span');
+  icon.className = 'town-icon';
+  icon.textContent = town.icon;
+  const caption = document.createElement('span');
+  caption.textContent = town.caption;
+  chip.append(icon, caption);
+  townWrap.append(chip);
+
+  const sumWrap = section('Variant 5 — the 90 s cap summary line (counts only, never words)');
+  const sum = document.createElement('p');
+  sum.className = 'talk-summary';
+  sum.textContent = 'Playback stops here — this conversation ran past the talk system\'s 90-second scene cap. The remaining 8 recorded utterances are summarised, not played: Nia Okafor spoke 4 more times; Kavi Marlow spoke 4 more times. Their words stay in the record, unquoted here.';
+  sumWrap.append(sum);
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+{
+ "schema": "portal.building-kit/v1",
+ "item": "M4.14 building kit card (visual-plan/02 \u00a75 recipe, footprint-specs v1 contract)",
+ "code": "LIBRARY_ANNEX",
+ "slug": "bld_library_annex",
+ "label": "Library Annex",
+ "designCode": "B6",
+ "provenanceClass": "feed-evidenced",
+ "footprint": {
+  "depthUnits": 4,
+  "modulesDeep": 2,
+  "modulesWide": 3,
+  "widthUnits": 6
+ },
+ "parcel": null,
+ "storeys": null,
+ "door": {
+  "anchorDoor": "threshold centre of the east face",
+  "anchorSignHeightUnits": 2.6,
+  "face": "east",
+  "heightUnits": 2.2,
+  "widthUnits": 2
+ },
+ "gateFace": null,
+ "family": "civic",
+ "basePieces": "MegaKit small hall",
+ "reads": "Shelf rows inside (Kenney Furniture stock); the fewest props of any building, by design.",
+ "custom": [],
+ "pieces": [
+  "walls:south:straight,window,straight",
+  "walls:north:straight,window,straight",
+  "walls:east:straight,door",
+  "walls:west:straight,window",
+  "Roof_RoundTiles_4x6",
+  "gable infills x2 (custom prism)",
+  "shelf rows x2"
+ ],
+ "condition": null,
+ "asBuilt": {
+  "glb": "../factory/outputs-buildings/bld_library_annex.glb",
+  "bytes": 288216,
+  "tris": 4301,
+  "notes": []
+ }
+}

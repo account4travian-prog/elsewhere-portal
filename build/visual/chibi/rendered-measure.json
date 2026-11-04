@@ -1,0 +1,42 @@
+{
+  "schema": "portal.rendered-measure/v1",
+  "figures": {
+    "atlas-meridian": {
+      "kit": "atlas-meridian",
+      "cameras": {
+        "canonical": {
+          "fullSpanPx": 574,
+          "headSpanPx": 337,
+          "headsTall": 1.703,
+          "headShare": 0.587
+        },
+        "plate": {
+          "fullSpanPx": 602,
+          "headSpanPx": 248,
+          "headsTall": 2.427,
+          "headShare": 0.412
+        }
+      }
+    },
+    "orrin-lowmarsh": {
+      "kit": "orrin-lowmarsh",
+      "cameras": {
+        "canonical": {
+          "fullSpanPx": 580,
+          "headSpanPx": 352,
+          "headsTall": 1.648,
+          "headShare": 0.607
+        },
+        "plate": {
+          "fullSpanPx": 602,
+          "headSpanPx": 254,
+          "headsTall": 2.37,
+          "headShare": 0.422
+        }
+      }
+    }
+  },
+  "method": "Blender Workbench renders of the factory masters (outputs-v2/<slug>.glb) in REST pose (armature pose_position=REST, no action — the pose the accessor gate measures; clearing actions alone leaves the importer pose in place and measurably pitches the head). Two orthographic cameras: canonical = elevation 35 from the south (the scene camera), plate = elevation 0 head-on. Two passes per camera: whole figure, and the head mesh alone (the GLB node named \"head\" — exactly what measure-figure.mjs counts). Spans from the alpha channel: rows with coverage > 0.5% of frame width; headsTall = fullSpanPx / headSpanPx in the same frame. Renders in ./renders/.",
+  "gate": "M4.06 exit gate: 2-2.5 heads tall in a rendered frame (PLAN-TO-COMPLETE M4.06). The Bible production band [0.40, 0.43] head share derives [2.33, 2.50] heads. The plate frame is the proportion measure; the canonical street view foreshortens the body while the round head keeps its silhouette, so its count reads lower by projection, not by proportion — recorded, not hidden.",
+  "measuredUtc": "2026-11-03T10:38:55.871Z"
+}

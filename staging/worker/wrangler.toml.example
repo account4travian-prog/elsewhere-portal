@@ -1,0 +1,16 @@
+# Elsewhere Portal — staging Worker config TEMPLATE (M4.02).
+# Secret-free by construction: the only secret, PORTAL_PATH_TOKEN, is
+# set with `wrangler secret put PORTAL_PATH_TOKEN` at deploy time and
+# never appears in this file. Copy to wrangler.toml (uncommitted) and
+# fill the two blanks on deploy day.
+
+name = "elsewhere-portal-staging"
+main = "worker.mjs"
+compatibility_date = "2026-11-01"
+workers_dev = true
+
+account_id = "<CLOUDFLARE_ACCOUNT_ID for Atlas's account>"
+
+[[r2_buckets]]
+binding = "BUCKET"
+bucket_name = "elsewhere-portal-staging"

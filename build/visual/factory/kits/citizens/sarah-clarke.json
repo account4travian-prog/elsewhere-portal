@@ -1,0 +1,55 @@
+{
+ "animation_pack": {
+  "archive_sha256": "65882f31f905ad2e953819648a59287cdeab8f623908d5ef701971d3758be20f",
+  "licence": "CC0 1.0 Universal (assets-src/ASSETS.md)",
+  "pack": "KayKit Character Animations 1.1"
+ },
+ "base": {
+  "archive_sha256": "abe48f4763fba0896bab486ee9e6d08ca6b5b3884b9601f235c8847ae94dc479",
+  "creator": "Kay Lousberg (kaylousberg.itch.io/kaykit-adventurers)",
+  "file": "KayKit_Adventurers_2.0_FREE/Characters/gltf/Rogue.glb",
+  "licence": "CC0 1.0 Universal (licence read from inside the archive; assets-src/ASSETS.md)",
+  "pack": "KayKit Adventurers 2.0 (FREE tier)",
+  "rig": "Rig_Medium (23 bones), renamed to the factory contract names at build"
+ },
+ "body_plan": "biped",
+ "build": {
+  "base_character": "Rogue",
+  "garment_colour": "#8fd0a0",
+  "gear": {
+   "cape": false
+  },
+  "hair_colour": "#d8b25e",
+  "props": [],
+  "sash": false,
+  "skin_colour": "#fadfc4"
+ },
+ "bundle_seq_source": 143,
+ "citizen_id": "sarah-clarke",
+ "citizen_key": "portal-key:sarah-clarke",
+ "civic_role": "F4 Generic",
+ "clip_source": "kaykit_cc0+procedural",
+ "clip_sources": {
+  "gather": "kaykit_cc0:Rig_Medium_General/Idle_B (talk-pose stand-in, recorded \u2014 KayKit has no talking clip; same stand-in kind M4.05 recorded for LOD1)",
+  "idle": "kaykit_cc0:Rig_Medium_General/Idle_A",
+  "knock": "procedural_factory (authored on the rig \u2014 KayKit carries no knock clip; the factory authors its own knock the same way)",
+  "sit": "kaykit_cc0:Rig_Medium_Simulation/Sit_Floor_Down",
+  "stand": "kaykit_cc0:Rig_Medium_Simulation/Sit_Floor_StandUp",
+  "type": "kaykit_cc0:Rig_Medium_Tools/Working_A",
+  "wait": "kaykit_cc0:Rig_Medium_General/Idle_A@stride2 (derived, factory precedent)",
+  "walk": "kaykit_cc0:Rig_Medium_MovementBasic/Walking_A"
+ },
+ "display_name": "Sarah Clarke",
+ "height_units": 1.8,
+ "identity_colour": "#8fd0a0",
+ "identity_colour_source": "citizenColor(portal-key) from build/app/logic.mjs, unique within the cast or first claimant",
+ "palette": {
+  "hair": "#d8b25e",
+  "identity": "#8fd0a0",
+  "skin": "#fadfc4"
+ },
+ "persona_id": "sarah-clarke",
+ "place_code": "EMBER_PLAZA_OF_UNITY",
+ "record_sources": [],
+ "species": "kaykit_rig_medium_citizen"
+}

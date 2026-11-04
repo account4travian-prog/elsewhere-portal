@@ -1,0 +1,129 @@
+{
+ "schema": "portal.building-kits/v1",
+ "item": "M4.14 building set manifest",
+ "generatedBy": "build/visual/factory/scripts/build_buildings.py",
+ "buildings": {
+  "EMBER_COLLEGE": {
+   "code": "EMBER_COLLEGE",
+   "slug": "bld_ember_college",
+   "label": "The College",
+   "glb": "../factory/outputs-buildings/bld_ember_college.glb",
+   "bytes": 491404,
+   "tris": 7282,
+   "card": "../factory/kits/bld_ember_college.json",
+   "origin": "footprint",
+   "treatment": "building"
+  },
+  "EMBER_TOWNHALL": {
+   "code": "EMBER_TOWNHALL",
+   "slug": "bld_ember_townhall",
+   "label": "Town Hall",
+   "glb": "../factory/outputs-buildings/bld_ember_townhall.glb",
+   "bytes": 762744,
+   "tris": 17566,
+   "card": "../factory/kits/bld_ember_townhall.json",
+   "origin": "footprint",
+   "treatment": "building"
+  },
+  "MARKET_HALL": {
+   "code": "MARKET_HALL",
+   "slug": "bld_market_hall",
+   "label": "Market Hall",
+   "glb": "../factory/outputs-buildings/bld_market_hall.glb",
+   "bytes": 383948,
+   "tris": 7736,
+   "card": "../factory/kits/bld_market_hall.json",
+   "origin": "footprint",
+   "treatment": "building"
+  },
+  "LIBRARY_ANNEX": {
+   "code": "LIBRARY_ANNEX",
+   "slug": "bld_library_annex",
+   "label": "Library Annex",
+   "glb": "../factory/outputs-buildings/bld_library_annex.glb",
+   "bytes": 288216,
+   "tris": 4301,
+   "card": "../factory/kits/bld_library_annex.json",
+   "origin": "footprint",
+   "treatment": "building"
+  },
+  "PUBLIC_WORKSHOP": {
+   "code": "PUBLIC_WORKSHOP",
+   "slug": "bld_public_workshop",
+   "label": "Public Workshop",
+   "glb": "../factory/outputs-buildings/bld_public_workshop.glb",
+   "bytes": 352024,
+   "tris": 7813,
+   "treatment": "building",
+   "card": "../factory/kits/bld_public_workshop.json",
+   "origin": "footprint"
+  },
+  "EMBER_DISTRICT_3_PLOT_18": {
+   "code": "EMBER_DISTRICT_3_PLOT_18",
+   "slug": "bld_ember_district_3_plot_18",
+   "label": "Meridian Hall (District 3, Plot 18)",
+   "glb": "../factory/outputs-buildings/bld_ember_district_3_plot_18.glb",
+   "bytes": 467916,
+   "tris": 7881,
+   "card": "../factory/kits/bld_ember_district_3_plot_18.json",
+   "origin": "footprint",
+   "treatment": "building"
+  },
+  "EMBER_DISTRICT_1_PLOT_31": {
+   "code": "EMBER_DISTRICT_1_PLOT_31",
+   "slug": "bld_ember_district_1_plot_31",
+   "label": "Ember Ledger Press (District 1, Plot 31)",
+   "glb": "../factory/outputs-buildings/bld_ember_district_1_plot_31.glb",
+   "bytes": 282772,
+   "tris": 4144,
+   "card": "../factory/kits/bld_ember_district_1_plot_31.json",
+   "origin": "footprint",
+   "treatment": "building"
+  },
+  "EMBER_PLAZA_OF_UNITY": {
+   "code": "EMBER_PLAZA_OF_UNITY",
+   "slug": "bld_ember_plaza_of_unity",
+   "label": "Plaza of Unity",
+   "glb": "../factory/outputs-buildings/bld_ember_plaza_of_unity.glb",
+   "bytes": 147188,
+   "tris": 3366,
+   "card": "../factory/kits/bld_ember_plaza_of_unity.json",
+   "origin": "paving",
+   "treatment": "open place"
+  },
+  "EMBER_DISTRICT_1_PLOT_30": {
+   "code": "EMBER_DISTRICT_1_PLOT_30",
+   "slug": "bld_ember_district_1_plot_30",
+   "label": "District 1, Plot 30",
+   "glb": "../factory/outputs-buildings/bld_ember_district_1_plot_30.glb",
+   "bytes": 76948,
+   "tris": 668,
+   "treatment": "honest empty plot",
+   "card": "../factory/kits/bld_ember_district_1_plot_30.json",
+   "origin": "parcel"
+  },
+  "EMBER_HOME_MAPLE_COTTAGE": {
+   "code": "EMBER_HOME_MAPLE_COTTAGE",
+   "slug": "bld_ember_home_maple_cottage",
+   "label": "Maple Cottage (a home)",
+   "glb": "../factory/outputs-buildings/bld_ember_home_maple_cottage.glb",
+   "bytes": 412096,
+   "tris": 5812,
+   "treatment": "building",
+   "card": "../factory/kits/bld_ember_home_maple_cottage.json",
+   "origin": "footprint"
+  },
+  "EMBER_HOME_WILLOW_COTTAGE": {
+   "code": "EMBER_HOME_WILLOW_COTTAGE",
+   "slug": "bld_ember_home_willow_cottage",
+   "label": "Willow Cottage (a home)",
+   "glb": "../factory/outputs-buildings/bld_ember_home_willow_cottage.glb",
+   "bytes": 505644,
+   "tris": 7216,
+   "treatment": "building",
+   "card": "../factory/kits/bld_ember_home_willow_cottage.json",
+   "origin": "footprint"
+  }
+ },
+ "bundleSeq": 506
+}

@@ -1,0 +1,61 @@
+{
+ "body_plan": "biped",
+ "clip_source": "ual1_cc0+procedural",
+ "clip_sources": {
+  "gather": "ual1_cc0:Idle_Talking_Loop",
+  "idle": "ual1_cc0:Idle_Loop",
+  "knock": "procedural_factory",
+  "sit": "ual1_cc0:Sitting_Enter",
+  "stand": "ual1_cc0:Sitting_Exit",
+  "type": "procedural_factory",
+  "wait": "ual1_cc0:Idle_Loop@stride2",
+  "walk": "ual1_cc0:Walk_Loop"
+ },
+ "display_name": "Verifier-1",
+ "face": {
+  "eye_colour": "#a85b12",
+  "incisors": false,
+  "muzzle_colour": "#fdf6ec",
+  "nose_colour": "#2b2320",
+  "speckles": false,
+  "stripes": false
+ },
+ "height_units": 1.9,
+ "kit_parts": {
+  "ear_scale": 1.35,
+  "ear_style": "fox_tall",
+  "snout_style": "fox_pointed",
+  "tail_style": "fox_bushy",
+  "tail_tip_colour": "#fdf6ec"
+ },
+ "palette": {
+  "accent": "#a8873c",
+  "fur": "#c96a2c",
+  "fur_dark": "#8a3f14",
+  "fur_light": "#fdf6ec",
+  "garment": "#1f4e5f",
+  "garment_dark": "#16383f"
+ },
+ "persona_id": "verifier-1",
+ "props": [
+  {
+   "hand": "head",
+   "kind": "spectacles",
+   "name": "spectacles",
+   "scale": 1.25
+  },
+  {
+   "hand": "R",
+   "kind": "red_pencil",
+   "name": "red_pencil",
+   "scale": 1.25
+  },
+  {
+   "hand": "L",
+   "kind": "calipers",
+   "name": "calipers",
+   "scale": 1.25
+  }
+ ],
+ "species": "fox"
+}

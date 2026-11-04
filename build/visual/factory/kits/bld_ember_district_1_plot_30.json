@@ -1,0 +1,34 @@
+{
+ "schema": "portal.building-kit/v1",
+ "item": "M4.14 building kit card (visual-plan/02 \u00a75 recipe, footprint-specs v1 contract)",
+ "code": "EMBER_DISTRICT_1_PLOT_30",
+ "slug": "bld_ember_district_1_plot_30",
+ "label": "District 1, Plot 30",
+ "designCode": null,
+ "provenanceClass": "feed-evidenced",
+ "footprint": null,
+ "parcel": {
+  "depthUnits": 8,
+  "provenance": "Derived \u2014 district-plot parcel rule (cell minus 1-unit street margin per side).",
+  "widthUnits": 8
+ },
+ "storeys": null,
+ "door": null,
+ "gateFace": "north",
+ "family": null,
+ "basePieces": null,
+ "reads": "Honest empty plot: fenced 8x8 parcel, plain-word plot sign, no building. Gate faces north.",
+ "custom": [],
+ "pieces": [
+  "Prop_WoodenFence_Single perimeter, gate gap at the north centre"
+ ],
+ "condition": null,
+ "asBuilt": {
+  "glb": "../factory/outputs-buildings/bld_ember_district_1_plot_30.glb",
+  "bytes": 76948,
+  "tris": 668,
+  "notes": [
+   "honest empty plot: fence + plain-word sign only; no building, no foundation"
+  ]
+ }
+}

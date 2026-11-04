@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "generatedBy": "build/visual/scene/gen-figure-kits.py (M4.10)",
+  "bundleSeq": 193,
+  "note": "Cast = the citizens the live bundle places at generation time. Kits are factory web-profile outputs (build tree); staging deployment copies figures under its own publish step. Citizens with no entry keep the capsule placeholder.",
+  "kits": {
+    "portal-key:arabela-protoser": {
+      "citizenKey": "portal-key:arabela-protoser",
+      "kit": "arabela-protoser",
+      "identityColour": "#7fb8e8",
+      "lod0": "../factory/outputs-web/arabela-protoser--lod0.glb",
+      "lod1": "../factory/outputs-web/arabela-protoser--lod1.glb",
+      "standeeManifest": "../factory/outputs-web/standees/arabela-protoser.standee.json"
+    },
+    "portal-key:atlas-meridian": {
+      "citizenKey": "portal-key:atlas-meridian",
+      "kit": "atlas-meridian",
+      "identityColour": "#a9c46f",
+      "lod0": "../factory/outputs-web/atlas-meridian--lod0.glb",
+      "lod1": "../factory/outputs-web/atlas-meridian--lod1.glb",
+      "standeeManifest": "../factory/outputs-web/standees/atlas-meridian.standee.json"
+    },
+    "portal-key:brat-natha": {
+      "citizenKey": "portal-key:brat-natha",
+      "kit": "brat-natha",
+      "identityColour": "#c98bb9",
+      "lod0": "../factory/outputs-web/brat-natha--lod0.glb",
+      "lod1": "../factory/outputs-web/brat-natha--lod1.glb",
+      "standeeManifest": "../factory/outputs-web/standees/brat-natha.standee.json"
+    },
+    "portal-key:hark-plumbline": {
+      "citizenKey": "portal-key:hark-plumbline",
+      "kit": "hark-plumbline",
+      "identityColour": "#f2b879",
+      "lod0": "../factory/outputs-web/hark-plumbline--lod0.glb",
+      "lod1": "../factory/outputs-web/hark-plumbline--lod1.glb",
+      "standeeManifest": "../factory/outputs-web/standees/hark-plumbline.standee.json"
+    },
+    "portal-key:kavi-marlow": {
+      "citizenKey": "portal-key:kavi-marlow",
+      "kit": "kavi-marlow",
+      "identityColour": "#e88f8f",
+      "lod0": "../factory/outputs-web/kavi-marlow--lod0.glb",
+      "lod1": "../factory/outputs-web/kavi-marlow--lod1.glb",
+      "standeeManifest": "../factory/outputs-web/standees/kavi-marlow.standee.json"
+    },
+    "portal-key:kevin-bianchi": {
+      "citizenKey": "portal-key:kevin-bianchi",
+      "kit": "kevin-bianchi",
+      "identityColour": "#ef8fb5",
+      "lod0": "../factory/outputs-web/kevin-bianchi--lod0.glb",
+      "lod1": "../factory/outputs-web/kevin-bianchi--lod1.glb",
+      "standeeManifest": "../factory/outputs-web/standees/kevin-bianchi.standee.json"
+    },
+    "portal-key:lenore-nevermore": {
+      "citizenKey": "portal-key:lenore-nevermore",
+      "kit": "lenore-nevermore",
+      "identityColour": "#7fd1c8",
+      "lod0": "../factory/outputs-web/lenore-nevermore--lod0.glb",
+      "lod1": "../factory/outputs-web/lenore-nevermore--lod1.glb",
+      "standeeManifest": "../factory/outputs-web/standees/lenore-nevermore.standee.json"
+    },
+    "portal-key:nath-between": {
+      "citizenKey": "portal-key:nath-between",
+      "kit": "nath-between",
+      "identityColour": "#c46fa2",
+      "lod0": "../factory/outputs-web/nath-between--lod0.glb",
+      "lod1": "../factory/outputs-web/nath-between--lod1.glb",
+      "standeeManifest": "../factory/outputs-web/standees/nath-between.standee.json"
+    },
+    "portal-key:nath-borowik": {
+      "citizenKey": "portal-key:nath-borowik",
+      "kit": "nath-borowik",
+      "identityColour": "#4fb3a9",
+      "lod0": "../factory/outputs-web/nath-borowik--lod0.glb",
+      "lod1": "../factory/outputs-web/nath-borowik--lod1.glb",
+      "standeeManifest": "../factory/outputs-web/standees/nath-borowik.standee.json"
+    },
+    "portal-key:orrin-lowmarsh": {
+      "citizenKey": "portal-key:orrin-lowmarsh",
+      "kit": "orrin-lowmarsh",
+      "identityColour": "#b39de0",
+      "lod0": "../factory/outputs-web/orrin-lowmarsh--lod0.glb",
+      "lod1": "../factory/outputs-web/orrin-lowmarsh--lod1.glb",
+      "standeeManifest": "../factory/outputs-web/standees/orrin-lowmarsh.standee.json"
+    },
+    "portal-key:robert-wiseman": {
+      "citizenKey": "portal-key:robert-wiseman",
+      "kit": "robert-wiseman",
+      "identityColour": "#6fa287",
+      "lod0": "../factory/outputs-web/robert-wiseman--lod0.glb",
+      "lod1": "../factory/outputs-web/robert-wiseman--lod1.glb",
+      "standeeManifest": "../factory/outputs-web/standees/robert-wiseman.standee.json"
+    },
+    "portal-key:rocky-headlong": {
+      "citizenKey": "portal-key:rocky-headlong",
+      "kit": "rocky-headlong",
+      "identityColour": "#e8c87f",
+      "lod0": "../factory/outputs-web/rocky-headlong--lod0.glb",
+      "lod1": "../factory/outputs-web/rocky-headlong--lod1.glb",
+      "standeeManifest": "../factory/outputs-web/standees/rocky-headlong.standee.json"
+    },
+    "portal-key:sapphire-clarke": {
+      "citizenKey": "portal-key:sapphire-clarke",
+      "kit": "sapphire-clarke",
+      "identityColour": "#7aa7e8",
+      "lod0": "../factory/outputs-web/sapphire-clarke--lod0.glb",
+      "lod1": "../factory/outputs-web/sapphire-clarke--lod1.glb",
+      "standeeManifest": "../factory/outputs-web/standees/sapphire-clarke.standee.json"
+    },
+    "portal-key:sarah-clarke": {
+      "citizenKey": "portal-key:sarah-clarke",
+      "kit": "sarah-clarke",
+      "identityColour": "#8fd0a0",
+      "lod0": "../factory/outputs-web/sarah-clarke--lod0.glb",
+      "lod1": "../factory/outputs-web/sarah-clarke--lod1.glb",
+      "standeeManifest": "../factory/outputs-web/standees/sarah-clarke.standee.json"
+    }
+  }
+}

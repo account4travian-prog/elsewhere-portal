@@ -1,0 +1,417 @@
+{
+ "schema": "portal.interior-kits/v1",
+ "generatedBy": "build/visual/scene/gen-interiors.mjs",
+ "source": "building-kits.json + factory kit cards + outputs-buildings GLBs + footprint-specs.json",
+ "interiors": {
+  "EMBER_COLLEGE": {
+   "code": "EMBER_COLLEGE",
+   "label": "The College",
+   "slug": "bld_ember_college",
+   "doorFace": "south",
+   "footprint": {
+    "widthUnits": 8,
+    "depthUnits": 6
+   },
+   "stations": [
+    {
+     "id": "station_lectern",
+     "suffix": "lectern",
+     "label": "Lectern",
+     "kind": "functional",
+     "position": [
+      0,
+      0,
+      1.2
+     ]
+    }
+   ],
+   "anchors": {
+    "door": [
+     1,
+     0,
+     3
+    ],
+    "camInterior": [
+     0,
+     3.2,
+     0
+    ],
+    "sign": [
+     1,
+     2.6,
+     3
+    ]
+   },
+   "cutNodes": [
+    "cut_wall_front",
+    "cut_wall_side"
+   ],
+   "roofNode": "cut_roof",
+   "roofLiftUnits": 3
+  },
+  "EMBER_TOWNHALL": {
+   "code": "EMBER_TOWNHALL",
+   "label": "Town Hall",
+   "slug": "bld_ember_townhall",
+   "doorFace": "south",
+   "footprint": {
+    "widthUnits": 8,
+    "depthUnits": 6
+   },
+   "stations": [
+    {
+     "id": "station_notice_board",
+     "suffix": "notice_board",
+     "label": "Notice Board",
+     "kind": "general",
+     "position": [
+      2,
+      0,
+      3.4
+     ]
+    }
+   ],
+   "anchors": {
+    "door": [
+     1,
+     0,
+     3
+    ],
+    "camInterior": [
+     0,
+     3.2,
+     0
+    ],
+    "sign": [
+     1,
+     2.6,
+     3
+    ]
+   },
+   "cutNodes": [
+    "cut_wall_front",
+    "cut_wall_side"
+   ],
+   "roofNode": "cut_roof",
+   "roofLiftUnits": 3
+  },
+  "MARKET_HALL": {
+   "code": "MARKET_HALL",
+   "label": "Market Hall",
+   "slug": "bld_market_hall",
+   "doorFace": "south",
+   "footprint": {
+    "widthUnits": 8,
+    "depthUnits": 6
+   },
+   "stations": [
+    {
+     "id": "station_counter",
+     "suffix": "counter",
+     "label": "Counter",
+     "kind": "functional",
+     "position": [
+      0,
+      0,
+      2.2
+     ]
+    }
+   ],
+   "anchors": {
+    "door": [
+     0,
+     0,
+     3
+    ],
+    "camInterior": [
+     0,
+     3.2,
+     0
+    ],
+    "sign": [
+     0,
+     2.6,
+     3
+    ]
+   },
+   "cutNodes": [
+    "cut_wall_front",
+    "cut_wall_side"
+   ],
+   "roofNode": "cut_roof",
+   "roofLiftUnits": 3
+  },
+  "LIBRARY_ANNEX": {
+   "code": "LIBRARY_ANNEX",
+   "label": "Library Annex",
+   "slug": "bld_library_annex",
+   "doorFace": "east",
+   "footprint": {
+    "widthUnits": 6,
+    "depthUnits": 4
+   },
+   "stations": [
+    {
+     "id": "station_shelves_1",
+     "suffix": "shelves_1",
+     "label": "Shelves 1",
+     "kind": "general",
+     "position": [
+      -1.6,
+      0,
+      1
+     ]
+    },
+    {
+     "id": "station_shelves_2",
+     "suffix": "shelves_2",
+     "label": "Shelves 2",
+     "kind": "general",
+     "position": [
+      -1.6,
+      0,
+      -0.8
+     ]
+    },
+    {
+     "id": "station_shelves_3",
+     "suffix": "shelves_3",
+     "label": "Shelves 3",
+     "kind": "general",
+     "position": [
+      0,
+      0,
+      -1.4
+     ]
+    }
+   ],
+   "anchors": {
+    "door": [
+     3,
+     0,
+     1
+    ],
+    "camInterior": [
+     0,
+     3.2,
+     0
+    ],
+    "sign": [
+     3,
+     2.6,
+     1
+    ]
+   },
+   "cutNodes": [
+    "cut_wall_front",
+    "cut_wall_side"
+   ],
+   "roofNode": "cut_roof",
+   "roofLiftUnits": 3
+  },
+  "PUBLIC_WORKSHOP": {
+   "code": "PUBLIC_WORKSHOP",
+   "label": "Public Workshop",
+   "slug": "bld_public_workshop",
+   "doorFace": "west",
+   "footprint": {
+    "widthUnits": 6,
+    "depthUnits": 4
+   },
+   "stations": [
+    {
+     "id": "station_workbench",
+     "suffix": "workbench",
+     "label": "Workbench",
+     "kind": "functional",
+     "position": [
+      -1.2,
+      0,
+      0
+     ]
+    }
+   ],
+   "anchors": {
+    "door": [
+     -3,
+     0,
+     0
+    ],
+    "camInterior": [
+     0,
+     3.2,
+     0
+    ],
+    "sign": [
+     -3,
+     2.6,
+     0
+    ]
+   },
+   "cutNodes": [
+    "cut_wall_front",
+    "cut_wall_side"
+   ],
+   "roofNode": "cut_roof",
+   "roofLiftUnits": 3
+  },
+  "EMBER_DISTRICT_3_PLOT_18": {
+   "code": "EMBER_DISTRICT_3_PLOT_18",
+   "label": "Meridian Hall (District 3, Plot 18)",
+   "slug": "bld_ember_district_3_plot_18",
+   "doorFace": "west",
+   "footprint": {
+    "widthUnits": 8,
+    "depthUnits": 6
+   },
+   "stations": [
+    {
+     "id": "station_dinner_host",
+     "suffix": "dinner_host",
+     "label": "Dinner Host",
+     "kind": "functional",
+     "position": [
+      -2.8,
+      0,
+      0
+     ]
+    },
+    {
+     "id": "station_dinner_seat_1",
+     "suffix": "dinner_seat_1",
+     "label": "Dinner Seat 1",
+     "kind": "general",
+     "position": [
+      -1.8,
+      0,
+      0.95
+     ]
+    },
+    {
+     "id": "station_dinner_seat_2",
+     "suffix": "dinner_seat_2",
+     "label": "Dinner Seat 2",
+     "kind": "general",
+     "position": [
+      0,
+      0,
+      0.95
+     ]
+    },
+    {
+     "id": "station_dinner_seat_3",
+     "suffix": "dinner_seat_3",
+     "label": "Dinner Seat 3",
+     "kind": "general",
+     "position": [
+      1.8,
+      0,
+      0.95
+     ]
+    },
+    {
+     "id": "station_dinner_seat_4",
+     "suffix": "dinner_seat_4",
+     "label": "Dinner Seat 4",
+     "kind": "general",
+     "position": [
+      -1.8,
+      0,
+      -0.95
+     ]
+    },
+    {
+     "id": "station_dinner_seat_5",
+     "suffix": "dinner_seat_5",
+     "label": "Dinner Seat 5",
+     "kind": "general",
+     "position": [
+      0,
+      0,
+      -0.95
+     ]
+    },
+    {
+     "id": "station_dinner_seat_6",
+     "suffix": "dinner_seat_6",
+     "label": "Dinner Seat 6",
+     "kind": "general",
+     "position": [
+      1.8,
+      0,
+      -0.95
+     ]
+    }
+   ],
+   "anchors": {
+    "door": [
+     -4,
+     0,
+     0
+    ],
+    "camInterior": [
+     0,
+     3.2,
+     0
+    ],
+    "sign": [
+     -4,
+     2.6,
+     0
+    ]
+   },
+   "cutNodes": [
+    "cut_wall_front",
+    "cut_wall_side"
+   ],
+   "roofNode": "cut_roof",
+   "roofLiftUnits": 3
+  },
+  "EMBER_DISTRICT_1_PLOT_31": {
+   "code": "EMBER_DISTRICT_1_PLOT_31",
+   "label": "Ember Ledger Press (District 1, Plot 31)",
+   "slug": "bld_ember_district_1_plot_31",
+   "doorFace": "east",
+   "footprint": {
+    "widthUnits": 6,
+    "depthUnits": 4
+   },
+   "stations": [
+    {
+     "id": "station_press",
+     "suffix": "press",
+     "label": "Press",
+     "kind": "functional",
+     "position": [
+      2.1,
+      0,
+      0
+     ]
+    }
+   ],
+   "anchors": {
+    "door": [
+     3,
+     0,
+     0
+    ],
+    "camInterior": [
+     0,
+     3.2,
+     0
+    ],
+    "sign": [
+     3,
+     2.6,
+     0
+    ]
+   },
+   "cutNodes": [
+    "cut_wall_front",
+    "cut_wall_side"
+   ],
+   "roofNode": "cut_roof",
+   "roofLiftUnits": 3
+  }
+ }
+}

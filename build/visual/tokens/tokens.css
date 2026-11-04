@@ -1,0 +1,119 @@
+/* Portal design tokens — GENERATED from tokens.json by tokens-build.mjs.
+ * Do not edit by hand: change tokens.json, re-run the build, commit both.
+ * Colour authority: sampled palette anchors govern over plan constants
+ * (AUTO-L04). See TOKENS.md for usage rules and the disagreements list. */
+
+:root {
+  /* color.anchor — sampled palette anchors — the world colours (AUTO-L04) */
+  --portal-color-anchor-sky-upper: #EBE6E2;
+  --portal-color-anchor-grass-sunlit: #CDEAC0;
+  --portal-color-anchor-grass-shade: #545931;
+  --portal-color-anchor-cobble-lit: #E2CFC1;
+  --portal-color-anchor-paving-shaded: #DCC7B4;
+  --portal-color-anchor-roof-lavender-college: #8679A0;
+  --portal-color-anchor-roof-blush-spire: #FDE5CF;
+  --portal-color-anchor-timber-structural: #99775B;
+  --portal-color-anchor-trim-pale: #CFBE95;
+  --portal-color-anchor-blossom-pink: #E3B5AA;
+  --portal-color-anchor-awning-banner-cream: #FDCFAC;
+  --portal-color-anchor-skin-base: #B4A9A8;
+  --portal-color-anchor-sign-wood: #DDD595;
+  --portal-color-anchor-interior-floor-wood: #F8CDA3;
+  --portal-color-anchor-interior-frame-timber: #D9BC8B;
+  --portal-color-anchor-interior-wall-mint: #9EAB9C;
+  --portal-color-anchor-interior-chalkboard: #627962;
+  --portal-color-anchor-interior-curtain-cream: #C3A088;
+  --portal-color-anchor-interior-window-glow: #F6D195;
+  --portal-color-anchor-sky-wash-2d: #FAE6E3;
+  --portal-color-anchor-outline-umber-2d: #3C2D22;
+  --portal-color-anchor-sage-2d: #B1C3A2;
+  --portal-color-anchor-grass-wash-2d: #CDD2B4;
+  --portal-color-anchor-path-bluecream-2d: #CBC0B3;
+  --portal-color-anchor-window-glow-2d: #E5D0BF;
+  --portal-color-anchor-lantern-warm-2d: #E1C799;
+
+  /* material.family — M4.07 building material families (data-only; consumed via the scene palette) */
+
+  /* color.family — act & place family colours (never the sole signal) */
+  --portal-color-family-act-travel: #A8D4F0;
+  --portal-color-family-act-social: #D9CCF5;
+  --portal-color-family-act-civic: #F2C14E;
+
+  /* color.identity — citizen identity colours (who, never state) */
+  --portal-color-identity-1: #EF8FB5;
+  --portal-color-identity-2: #7FB8E8;
+  --portal-color-identity-3: #8FD0A0;
+  --portal-color-identity-4: #F2B879;
+  --portal-color-identity-5: #B39DE0;
+  --portal-color-identity-6: #7FD1C8;
+  --portal-color-identity-7: #E88F8F;
+  --portal-color-identity-8: #A9C46F;
+
+  /* color.state — honesty/state badge family, as shipped */
+  --portal-color-state-live: #CDEAC0;
+  --portal-color-state-stale: #F6D9A8;
+  --portal-color-state-replay: #D9CCF5;
+  --portal-color-state-loading: #E8E2D9;
+  --portal-color-state-badge-base: #EEEEEE;
+  --portal-color-state-recording: #D9CCF5;
+  --portal-color-state-sample-bg: #F8C9A8;
+  --portal-color-state-sample-ink: #6B3410;
+  --portal-color-state-sample-border: #D97B2F;
+  --portal-color-state-conflict-bg: #FDF3D8;
+  --portal-color-state-conflict-border: #D9A441;
+
+  /* color.surface — 2D app chrome palette, as built */
+  --portal-color-surface-bg: #FDF3E3;
+  --portal-color-surface-panel: #FFFDF8;
+  --portal-color-surface-ink: #4A3F35;
+  --portal-color-surface-soft: #8A7A6A;
+  --portal-color-surface-line: #F0DFC8;
+  --portal-color-surface-accent: #E77FA2;
+  --portal-color-surface-topbar: #FFF8EC;
+  /* DISAGREEMENT D-T01: emits the app value; see TOKENS.md. */
+  --portal-color-surface-sky: #A8D4F0;
+  --portal-color-surface-grass: #CDEAC0;
+  --portal-color-surface-follow-bar-bg: #EAF4FF;
+  --portal-color-surface-away-bg: #F3EFFF;
+  --portal-color-surface-button-bg: #FFE9A8;
+
+  /* font — typography (X7; quoted-words font is fork F-2) */
+  --portal-font-family-display: "Fredoka", "Nunito", sans-serif;
+  --portal-font-family-body: "Nunito", "Segoe UI", system-ui, sans-serif;
+  --portal-font-family-quoted: "Lora", Georgia, serif;
+  --portal-font-floor-body-desktop: 16px;
+  --portal-font-floor-body-mobile: 15px;
+  --portal-font-scale-wordmark: 1.35rem;
+  --portal-font-scale-panel-title: 1.05rem;
+  --portal-font-scale-now-line: 1.02rem;
+  --portal-font-scale-body: 1rem;
+  --portal-font-scale-meta: 0.88rem;
+  --portal-font-scale-chip: 0.78rem;
+  --portal-font-weight-emphasis: 800;
+  --portal-font-weight-strong: 700;
+
+  /* space — spacing / radius / border / shadow — the Wave 1 shell scale */
+  --portal-space-radius-panel: 18px;
+  --portal-space-radius-card: 12px;
+  --portal-space-radius-bubble: 14px;
+  --portal-space-radius-note: 8px;
+  --portal-space-radius-pill: 999px;
+  --portal-space-border-panel: 2px;
+  --portal-space-border-topbar: 3px;
+  --portal-space-pad-panel: 0.9rem 1rem;
+  --portal-space-gap-layout: 1rem;
+  --portal-space-pad-page-x: 1.2rem;
+  --portal-space-shadow-panel: 0 3px 0 rgba(190, 150, 90, 0.15);
+  --portal-space-outline-2d: 2.5px;
+
+  /* motion — motion durations & rates (G2) */
+  --portal-motion-pre-action-icon-min: 1000ms;
+  --portal-motion-interior-open: 0.6s;
+
+  /* presence — presence treatments (data-only; no CSS emission) */
+
+  /* rig — 3D scene rig values (data-only; no CSS emission) */
+
+  /* wording — camera wording (data-only; no CSS emission) */
+
+}

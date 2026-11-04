@@ -1,0 +1,171 @@
+{
+ "$schema": "http://json-schema.org/draft-07/schema#",
+ "properties": {
+  "body_plan": {
+   "enum": [
+    "biped",
+    "octopus_hem"
+   ]
+  },
+  "clip_source": {
+   "description": "procedural_factory until UAL source clips land in build/assets",
+   "enum": [
+    "procedural_factory",
+    "ual_cc0",
+    "ual1_cc0+procedural"
+   ]
+  },
+  "clip_sources": {
+   "type": "object"
+  },
+  "display_name": {
+   "type": "string"
+  },
+  "face": {
+   "properties": {
+    "eye_colour": {
+     "type": "string"
+    },
+    "incisors": {
+     "type": "boolean"
+    },
+    "muzzle_colour": {
+     "type": "string"
+    },
+    "nose_colour": {
+     "type": "string"
+    },
+    "speckles": {
+     "type": "boolean"
+    },
+    "stripes": {
+     "type": "boolean"
+    }
+   },
+   "required": [
+    "eye_colour",
+    "nose_colour",
+    "muzzle_colour"
+   ],
+   "type": "object"
+  },
+  "height_units": {
+   "type": "number"
+  },
+  "kit_parts": {
+   "properties": {
+    "ear_scale": {
+     "type": "number"
+    },
+    "ear_style": {
+     "enum": [
+      "cat_triangle",
+      "round",
+      "fox_tall",
+      "none"
+     ]
+    },
+    "snout_style": {
+     "enum": [
+      "cat_small",
+      "beaver_wide",
+      "fox_pointed",
+      "none"
+     ]
+    },
+    "tail_style": {
+     "enum": [
+      "cat_curved",
+      "beaver_paddle",
+      "fox_bushy",
+      "none"
+     ]
+    },
+    "tail_tip_colour": {
+     "type": [
+      "string",
+      "null"
+     ]
+    }
+   },
+   "type": "object"
+  },
+  "palette": {
+   "properties": {
+    "accent": {
+     "type": "string"
+    },
+    "fur": {
+     "pattern": "^#[0-9a-fA-F]{6}$",
+     "type": "string"
+    },
+    "fur_dark": {
+     "type": "string"
+    },
+    "fur_light": {
+     "type": "string"
+    },
+    "garment": {
+     "type": "string"
+    },
+    "garment_dark": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "fur",
+    "garment"
+   ],
+   "type": "object"
+  },
+  "persona_id": {
+   "type": "string"
+  },
+  "props": {
+   "items": {
+    "properties": {
+     "hand": {
+      "enum": [
+       "R",
+       "L",
+       "head",
+       "both"
+      ]
+     },
+     "kind": {
+      "type": "string"
+     },
+     "name": {
+      "type": "string"
+     },
+     "scale": {
+      "description": "spec: signature props at 125% -> 1.25",
+      "type": "number"
+     }
+    },
+    "required": [
+     "name",
+     "kind",
+     "hand"
+    ],
+    "type": "object"
+   },
+   "type": "array"
+  },
+  "species": {
+   "type": "string"
+  }
+ },
+ "required": [
+  "persona_id",
+  "species",
+  "body_plan",
+  "palette",
+  "face",
+  "kit_parts",
+  "props",
+  "clip_source"
+ ],
+ "title": "Office Avatar Kit",
+ "type": "object"
+}

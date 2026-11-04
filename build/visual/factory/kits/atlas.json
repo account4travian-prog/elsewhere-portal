@@ -1,0 +1,55 @@
+{
+ "body_plan": "biped",
+ "clip_source": "ual1_cc0+procedural",
+ "clip_sources": {
+  "gather": "ual1_cc0:Idle_Talking_Loop",
+  "idle": "ual1_cc0:Idle_Loop",
+  "knock": "procedural_factory",
+  "sit": "ual1_cc0:Sitting_Enter",
+  "stand": "ual1_cc0:Sitting_Exit",
+  "type": "procedural_factory",
+  "wait": "ual1_cc0:Idle_Loop@stride2",
+  "walk": "ual1_cc0:Walk_Loop"
+ },
+ "display_name": "Atlas",
+ "face": {
+  "eye_colour": "#b35c12",
+  "incisors": false,
+  "muzzle_colour": "#f5f2ea",
+  "nose_colour": "#e58a9a",
+  "speckles": false,
+  "stripes": true
+ },
+ "height_units": 1.88,
+ "kit_parts": {
+  "ear_scale": 1.15,
+  "ear_style": "cat_triangle",
+  "snout_style": "cat_small",
+  "tail_style": "cat_curved",
+  "tail_tip_colour": null
+ },
+ "palette": {
+  "accent": "#d9a441",
+  "fur": "#9aa3ad",
+  "fur_dark": "#646e78",
+  "fur_light": "#f5f2ea",
+  "garment": "#7a5c38",
+  "garment_dark": "#5c4632"
+ },
+ "persona_id": "atlas",
+ "props": [
+  {
+   "hand": "R",
+   "kind": "crescent_staff",
+   "name": "crescent_staff",
+   "scale": 1.25
+  },
+  {
+   "hand": "L",
+   "kind": "ledger",
+   "name": "ledger",
+   "scale": 1.25
+  }
+ ],
+ "species": "cat"
+}

@@ -1,0 +1,50 @@
+{
+ "schema": "portal.building-kit/v1",
+ "item": "M4.14 building kit card (visual-plan/02 \u00a75 recipe, footprint-specs v1 contract)",
+ "code": "EMBER_DISTRICT_3_PLOT_18",
+ "slug": "bld_ember_district_3_plot_18",
+ "label": "Meridian Hall (District 3, Plot 18)",
+ "designCode": "B7",
+ "provenanceClass": "record-attested",
+ "footprint": {
+  "depthUnits": 6,
+  "modulesDeep": 3,
+  "modulesWide": 4,
+  "widthUnits": 8
+ },
+ "parcel": {
+  "depthUnits": 8,
+  "provenance": "Derived \u2014 district-plot parcel rule (cell minus 1-unit street margin per side).",
+  "widthUnits": 8
+ },
+ "storeys": null,
+ "door": {
+  "anchorDoor": "threshold centre of the west face",
+  "anchorSignHeightUnits": 2.6,
+  "face": "west",
+  "heightUnits": 2.2,
+  "widthUnits": 2
+ },
+ "gateFace": null,
+ "family": "social",
+ "basePieces": "MegaKit hall",
+ "reads": "Dinner interior: long table + benches (Kenney Furniture stock); host/guest stations for dinner staging.",
+ "custom": [],
+ "pieces": [
+  "walls:south:straight,window,straight,window",
+  "walls:north:straight,window,straight,window",
+  "walls:east:straight,window,straight",
+  "walls:west:straight,door,straight",
+  "Roof_RoundTiles_6x6",
+  "gable infills x2 (custom prism)",
+  "dinner table",
+  "village:Bench_1 x6"
+ ],
+ "condition": null,
+ "asBuilt": {
+  "glb": "../factory/outputs-buildings/bld_ember_district_3_plot_18.glb",
+  "bytes": 467916,
+  "tris": 7881,
+  "notes": []
+ }
+}

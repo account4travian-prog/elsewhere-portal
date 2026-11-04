@@ -1,0 +1,49 @@
+{
+ "body_plan": "biped",
+ "clip_source": "ual1_cc0+procedural",
+ "clip_sources": {
+  "gather": "ual1_cc0:Idle_Talking_Loop",
+  "idle": "ual1_cc0:Idle_Loop",
+  "knock": "procedural_factory",
+  "sit": "ual1_cc0:Sitting_Enter",
+  "stand": "ual1_cc0:Sitting_Exit",
+  "type": "procedural_factory",
+  "wait": "ual1_cc0:Idle_Loop@stride2",
+  "walk": "ual1_cc0:Walk_Loop"
+ },
+ "display_name": "Builder-1",
+ "face": {
+  "eye_colour": "#8a4d12",
+  "incisors": true,
+  "muzzle_colour": "#c9a06a",
+  "nose_colour": "#3a2a22",
+  "speckles": false,
+  "stripes": false
+ },
+ "height_units": 1.82,
+ "kit_parts": {
+  "ear_scale": 1.15,
+  "ear_style": "round",
+  "snout_style": "beaver_wide",
+  "tail_style": "beaver_paddle",
+  "tail_tip_colour": null
+ },
+ "palette": {
+  "accent": "#e8b71a",
+  "fur": "#8a5a33",
+  "fur_dark": "#5f3d20",
+  "fur_light": "#c9a06a",
+  "garment": "#1f4e5f",
+  "garment_dark": "#16383f"
+ },
+ "persona_id": "builder-1",
+ "props": [
+  {
+   "hand": "R",
+   "kind": "spirit_level",
+   "name": "spirit_level",
+   "scale": 1.25
+  }
+ ],
+ "species": "beaver"
+}

@@ -1,0 +1,52 @@
+{
+ "schema": "portal.building-kit/v1",
+ "item": "M4.14 building kit card (visual-plan/02 \u00a75 recipe, footprint-specs v1 contract)",
+ "code": "MARKET_HALL",
+ "slug": "bld_market_hall",
+ "label": "Market Hall",
+ "designCode": "B4",
+ "provenanceClass": "feed-evidenced",
+ "footprint": {
+  "depthUnits": 6,
+  "modulesDeep": 3,
+  "modulesWide": 4,
+  "widthUnits": 8
+ },
+ "parcel": null,
+ "storeys": null,
+ "door": {
+  "anchorDoor": "threshold centre of the south face, opening through the stall frontage",
+  "anchorSignHeightUnits": 2.6,
+  "face": "south",
+  "heightUnits": 2.2,
+  "widthUnits": 2
+ },
+ "gateFace": null,
+ "family": "market",
+ "basePieces": "MegaKit hall walls + open stall frontage; Village Pack market elements",
+ "reads": "Open stall frontage on the south face with the 8x2 stall apron; striped awning in Sample 1 pink/cream (2-colour 64x64 procedural texture, the kit\u2019s one procedural texture); crates/barrels/produce bins at the counter (Kenney Furniture/Nature stock \u2014 Fantasy Props not intaked by this lane, substitution recorded).",
+ "custom": [
+  {
+   "name": "awning_stripes",
+   "kind": "texture",
+   "note": "2-colour 64x64 canvas texture, pink/cream"
+  }
+ ],
+ "pieces": [
+  "walls:north:straight,window,straight,window",
+  "walls:east:straight,window,straight",
+  "walls:west:straight,window,straight",
+  "Roof_RoundTiles_6x6",
+  "gable infills x2 (custom prism)",
+  "stall posts+awning (procedural texture)",
+  "Prop_Crate x3",
+  "village:Barrel x2"
+ ],
+ "condition": null,
+ "asBuilt": {
+  "glb": "../factory/outputs-buildings/bld_market_hall.glb",
+  "bytes": 383948,
+  "tris": 7736,
+  "notes": []
+ }
+}

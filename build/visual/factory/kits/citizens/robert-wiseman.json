@@ -1,0 +1,57 @@
+{
+ "animation_pack": {
+  "archive_sha256": "65882f31f905ad2e953819648a59287cdeab8f623908d5ef701971d3758be20f",
+  "licence": "CC0 1.0 Universal (assets-src/ASSETS.md)",
+  "pack": "KayKit Character Animations 1.1"
+ },
+ "base": {
+  "archive_sha256": "abe48f4763fba0896bab486ee9e6d08ca6b5b3884b9601f235c8847ae94dc479",
+  "creator": "Kay Lousberg (kaylousberg.itch.io/kaykit-adventurers)",
+  "file": "KayKit_Adventurers_2.0_FREE/Characters/gltf/Knight.glb",
+  "licence": "CC0 1.0 Universal (licence read from inside the archive; assets-src/ASSETS.md)",
+  "pack": "KayKit Adventurers 2.0 (FREE tier)",
+  "rig": "Rig_Medium (23 bones), renamed to the factory contract names at build"
+ },
+ "body_plan": "biped",
+ "build": {
+  "base_character": "Knight",
+  "garment_colour": "#6fa287",
+  "gear": {
+   "cape": false,
+   "helmet": true,
+   "visor": false
+  },
+  "hair_colour": "#a9a49c",
+  "props": [],
+  "sash": false,
+  "skin_colour": "#f8ccab"
+ },
+ "bundle_seq_source": 143,
+ "citizen_id": "robert-wiseman",
+ "citizen_key": "portal-key:robert-wiseman",
+ "civic_role": "F4 Generic",
+ "clip_source": "kaykit_cc0+procedural",
+ "clip_sources": {
+  "gather": "kaykit_cc0:Rig_Medium_General/Idle_B (talk-pose stand-in, recorded \u2014 KayKit has no talking clip; same stand-in kind M4.05 recorded for LOD1)",
+  "idle": "kaykit_cc0:Rig_Medium_General/Idle_A",
+  "knock": "procedural_factory (authored on the rig \u2014 KayKit carries no knock clip; the factory authors its own knock the same way)",
+  "sit": "kaykit_cc0:Rig_Medium_Simulation/Sit_Floor_Down",
+  "stand": "kaykit_cc0:Rig_Medium_Simulation/Sit_Floor_StandUp",
+  "type": "kaykit_cc0:Rig_Medium_Tools/Working_A",
+  "wait": "kaykit_cc0:Rig_Medium_General/Idle_A@stride2 (derived, factory precedent)",
+  "walk": "kaykit_cc0:Rig_Medium_MovementBasic/Walking_A"
+ },
+ "display_name": "Robert Wiseman",
+ "height_units": 1.8,
+ "identity_colour": "#6fa287",
+ "identity_colour_source": "derived extension \u2014 citizenColor collides within the cast (8-colour dot palette, 14 citizens); assigned in civic claim order from the recorded derived list",
+ "palette": {
+  "hair": "#a9a49c",
+  "identity": "#6fa287",
+  "skin": "#f8ccab"
+ },
+ "persona_id": "robert-wiseman",
+ "place_code": "EMBER_PLAZA_OF_UNITY",
+ "record_sources": [],
+ "species": "kaykit_rig_medium_citizen"
+}

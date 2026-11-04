@@ -1,0 +1,8 @@
+node_modules/
+.wrangler/
+staging/.local-bucket/
+staging/captures/
+staging/publish-log.jsonl
+staging/.staging-publish-state.json
+*.log
+.env*

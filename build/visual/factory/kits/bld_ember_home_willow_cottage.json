@@ -1,0 +1,41 @@
+{
+ "schema": "portal.building-kit/v1",
+ "item": "M4.14 building kit card (visual-plan/02 \u00a75 recipe, footprint-specs v1 contract)",
+ "code": "EMBER_HOME_WILLOW_COTTAGE",
+ "slug": "bld_ember_home_willow_cottage",
+ "label": "Willow Cottage (a home)",
+ "designCode": "B9",
+ "provenanceClass": "staging",
+ "footprint": {
+  "depthUnits": 4,
+  "modulesDeep": 2,
+  "modulesWide": 2,
+  "widthUnits": 4
+ },
+ "parcel": null,
+ "storeys": null,
+ "door": {
+  "anchorDoor": "threshold centre of the west face",
+  "anchorSignHeightUnits": 2.6,
+  "face": "west",
+  "heightUnits": 2.2,
+  "widthUnits": 2
+ },
+ "gateFace": null,
+ "family": "home",
+ "basePieces": "Village Pack house",
+ "reads": "Homes-family palette rotation B (differs from Maple in roof + door tokens).",
+ "custom": [],
+ "pieces": [
+  "village:House_2@1.4"
+ ],
+ "condition": null,
+ "asBuilt": {
+  "glb": "../factory/outputs-buildings/bld_ember_home_willow_cottage.glb",
+  "bytes": 505644,
+  "tris": 7216,
+  "notes": [
+   "whole Village house scaled 1.4 to the 4x4 footprint; its own door is on the model \u2014 rotation set so the model front faces the spec door face"
+  ]
+ }
+}
